@@ -25,7 +25,7 @@ export default TemplateWrapper
 
 export const query = graphql`
   query SettingsQuery {
-    markdownRemark(frontmatter: {path: {eq: "/global-settings"}}) {
+    markdownRemark(frontmatter: {templateKey: {eq: "global-settings"}}) {
       frontmatter {
         logo
         templateKey
