@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import withRoot from '../withRoot';
+
 import Navbar from '../components/Navbar'
 import './all.sass'
 import 'typeface-roboto'
@@ -12,15 +14,16 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
       <Navbar title={settings.frontmatter.siteDescription} logo={settings.frontmatter.logo} />
-      <div>{children()}</div>
+      {children()}
     </div>
   )
 }
+
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-export default TemplateWrapper
+export default withRoot(TemplateWrapper)
 
 
 export const query = graphql`

@@ -54,6 +54,21 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Image", name: "image", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Team title", name: "teamTitle", widget: "text"}
+          - {label: "Team Description", name: "teamDescription", widget: "text"}
+          - label: "Team"
+            name: "team"
+            widget: "list"
+            fields:
+              - label: Person
+                name: person
+                widget: object
+                fields:
+                  - {label: Name, name: name, widget: string, default: "Emmet"}
+                  - {label: Title, name: title, widget: string, default: "Solution Architect"}
+                  - {label: Avatar, name: avatar, widget: string, default: "/img/emmet.jpg"}
+                  - {label: Quote, name: quote, widget: text, default: "About me"}
+
       - file: "src/pages/product/product.md"
         label: "Products Page"
         name: "products"

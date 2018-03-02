@@ -4,7 +4,6 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
-import withRoot from '../withRoot';
 
 const styles = theme => ({
   root: {
@@ -50,7 +49,7 @@ class IndexPage extends React.Component {
                 key={post.id}
               >
                 <p>
-                  <Link className="has-text-primary" to={post.frontmatter.path}>
+                  <Link to={post.frontmatter.path}>
                     {post.frontmatter.title}
                   </Link>
                   <span> &bull; </span>
@@ -60,7 +59,7 @@ class IndexPage extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className="button is-small" to={post.frontmatter.path}>
+                  <Link to={post.frontmatter.path}>
                     Keep Reading →
                   </Link>
                 </p>
@@ -94,4 +93,4 @@ IndexPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(IndexPage));
+export default withStyles(styles)(IndexPage);
