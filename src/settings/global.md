@@ -1,5 +1,6 @@
 ---
 templateKey: global-settings
+path: '/global-settings'
 siteTitle: finiteloop
 siteUrl: 'https://finiteloop.netlify.com'
 siteDescription: 'finite minds, infinite ideas, right solution....'
