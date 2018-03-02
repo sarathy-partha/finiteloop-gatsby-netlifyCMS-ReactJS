@@ -4,10 +4,11 @@ import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
 import './all.sass'
+import 'typeface-roboto'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="finiteloop - infinite thinking, finite solution, simplify business..." />
     <Navbar />
     <div>{children()}</div>
   </div>

@@ -17,21 +17,23 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }
     }
   `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
-    }
+      if (result.errors) {
+        result.errors.forEach(e => console.error(e.toString()))
+        return Promise.reject(result.errors)
+      }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const pagePath = node.frontmatter.path
-      createPage({
-        path: pagePath,
-        component: path.resolve(
-          `src/templates/${String(node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {},
+      return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        const pagePath = node.frontmatter.path
+        if (node.frontmatter.templateKey != 'global-settings') {
+          createPage({
+            path: pagePath,
+            component: path.resolve(
+              `src/templates/${String(node.frontmatter.templateKey)}.js`
+            ),
+            // additional data can be passed via context
+            context: {},
+          })
+        }
       })
     })
-  })
 }

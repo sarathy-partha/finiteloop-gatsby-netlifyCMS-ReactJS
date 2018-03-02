@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'finiteloop',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,6 +12,14 @@ module.exports = {
         name: 'pages',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/settings`,
+        name: 'settings',
+      },
+    },
+    `gatsby-transformer-remark`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
