@@ -7,7 +7,6 @@ import './all.sass'
 import 'typeface-roboto'
 
 const TemplateWrapper = ({ children, data }) => {
-  console.log(data)
   const { markdownRemark: settings } = data
   return (
     <div>
