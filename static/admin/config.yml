@@ -20,11 +20,11 @@ collections:
           - {label: Site Title, name: siteTitle, widget: string}
           - {label: Site Url, name: siteUrl, widget: string, required: false}
           - {label: Site Description, name: siteDescription, widget: text, required: false}
+          - {label: Logo, name: logo, widget: image, required: true}
           - label: Social Media Card
             name: socialMediaCard
             widget: object
             fields:
-              - {label: Image, name: image, widget: image, required: false}
               - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
           - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
@@ -52,6 +52,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Path", name: "path", widget: "hidden", default: "/about"}
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Image", name: "image", widget: "image"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/product/product.md"
         label: "Products Page"
