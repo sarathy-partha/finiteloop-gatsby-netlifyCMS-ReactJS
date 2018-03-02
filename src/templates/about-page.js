@@ -24,7 +24,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
 export default ({ data }) => {
   const { markdownRemark: post } = data
-
+  {{console.log(data)}}
   return (
     <AboutPageTemplate
       contentComponent={HTMLContent}

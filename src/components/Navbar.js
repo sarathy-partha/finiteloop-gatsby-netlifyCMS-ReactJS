@@ -13,6 +13,9 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Icon from 'material-ui/Icon';
+import Grow from 'material-ui/transitions/Grow';
+
+import { GitHubIcon } from './icons/githubIcon'
 
 const styles = {
   root: {
@@ -21,29 +24,27 @@ const styles = {
   flex: {
     flex: 1,
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
 };
 
 const Navbar = (props) => {
   const { classes } = props;
   return (
     <div className={classes.root} >
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
-          </Typography>
-          <Button className={classes.menuButton} color="inherit" aria-label="Menu">
-            <Icon>code</Icon>
-          </Button>
-        </Toolbar>
-      </AppBar>
+      <Grow in
+        style={{ transformOrigin: '0 0 0' }}
+        {...{ timeout: 1000 }}>
+        <AppBar position="fixed">
+          <Toolbar>
+            <img src={props.logo} style={{width: '100px'}}/>
+            <Typography variant="title" color="inherit" className={classes.flex}>
+              {props.title}
+            </Typography>
+            <IconButton href="https://github.com/partha360/finiteloop-gatsby-netlifyCMS-ReactJS" target="_new" color="inherit" aria-label="Menu">
+              <GitHubIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </Grow>
     </div >
   )
 }

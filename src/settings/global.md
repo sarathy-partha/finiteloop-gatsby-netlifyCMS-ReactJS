@@ -1,10 +1,11 @@
 ---
 templateKey: 'global-settings'
+path: '/global-settings'
 siteTitle: finiteloop
 siteUrl: 'https://finiteloop.netlify.com'
 siteDescription: 'finite minds, infinite ideas, right solution....'
+logo: /img/jumbotron.jpg
 socialMediaCard:
-  image: ../img/logo.svg
   twitterCreatorAccount: '@partha360'
   twitterSiteAccount: ''
 headerScripts: <!-- Add your analytics scripts / verification meta here -->
