@@ -67,7 +67,7 @@ collections:
                   - {label: Name, name: name, widget: string, default: "Emmet"}
                   - {label: Title, name: title, widget: string, default: "Solution Architect"}
                   - {label: Avatar, name: avatar, widget: string, default: "/img/emmet.jpg"}
-                  - {label: Quote, name: quote1, widget: "text", default: "About me"}
+                  - {label: Quote, name: quote, widget: "text", default: "About me"}
                   - {label: "Facebook Site url", name: "fbsiteurl", widget: string, required: false}
                   - {label: "Twitter Site url", name: "twtrsiteurl", widget: string, required: false}
                   - {label: "Linkedin Site url", name: "lnkdnsiteurl", widget: string, required: false}
