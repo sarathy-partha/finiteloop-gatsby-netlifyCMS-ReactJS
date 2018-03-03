@@ -15,7 +15,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Icon from 'material-ui/Icon';
 import Fade from 'material-ui/transitions/Fade';
 
-import { GitHubIcon } from './icons/githubIcon'
+import { GitHubIcon } from './icons/icons'
 import GatsbyLink from 'gatsby-link';
 
 const styles = theme => ({

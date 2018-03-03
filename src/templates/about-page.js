@@ -12,15 +12,18 @@ import PlayArrowIcon from 'material-ui-icons/PlayArrow';
 import SkipNextIcon from 'material-ui-icons/SkipNext';
 import Divider from 'material-ui/Divider';
 
+import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   card: {
     display: 'flex',
-    height: '550px',
-    maxWidth: '500px',
+    //maxHeight: '550px',
+    maxWidth: '600px',
     marginTop: '5px',
+    textOverflow: 'ellipsis',
   },
   details: {
     display: 'flex',
@@ -33,6 +36,17 @@ const styles = theme => ({
   cover: {
     width: '100%',
     //height: 151,
+  },
+  controls: {
+    display: 'flex',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    paddingLeft: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+    justifyContent: 'space-evenly',
+  },
+  icons: {
+    paddingLeft: '5px',
   },
   team: {
     display: 'flex',
@@ -53,7 +67,7 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
         {teamDescription}
       </Typography>
       <Divider />
-      <Grid container xs spacing={0} className={classes.root}
+      <Grid container item xs spacing={0} className={classes.root}
         className={classes.team}
         alignItems="stretch"
         direction="row"
@@ -71,16 +85,20 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
                       </Typography>
                     </CardContent>
                     <div className={classes.controls}>
-                      <IconButton aria-label="Previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                      <IconButton href={person.fbsiteurl} target="_new" color="inherit" aria-label="Menu">
+                        <FbIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
                       </IconButton>
-                      <IconButton aria-label="Play/pause">
-                        <PlayArrowIcon className={classes.playIcon} />
+                      <IconButton href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
+                        <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
                       </IconButton>
-                      <IconButton aria-label="Next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                      <IconButton href={person.twtrsiteurl} target="_new" aria-label="Next">
+                        <TwtrIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                      </IconButton>
+                      <IconButton href={person.githubsiteurl} target="_new" aria-label="Next">
+                        <GitHubIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
                       </IconButton>
                     </div>
+                    <Divider />
                   </div>
                   <CardMedia
                     className={classes.cover}
@@ -126,7 +144,7 @@ export const aboutPageQuery = graphql`
             edges {
           node {
             html
-          id
+            id
           frontmatter {
             path
             title
@@ -135,10 +153,14 @@ export const aboutPageQuery = graphql`
           teamDescription
             team {
             person {
-          name
-          title
-          avatar
-          quote
+              name
+              title
+              avatar
+              quote
+              fbsiteurl
+              twtrsiteurl
+              lnkdnsiteurl
+              githubsiteurl
         }
       }
     }

@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children, data }) => {
   return (
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
-      <Navbar title={settings.frontmatter.siteDescription} logo={settings.frontmatter.logo} />
+      <Navbar title={settings.frontmatter.siteTitle} logo={settings.frontmatter.logo} />
       {children()}
     </div>
   )

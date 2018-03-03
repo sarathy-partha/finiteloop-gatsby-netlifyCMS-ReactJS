@@ -12,6 +12,7 @@ module.exports = {
         name: 'pages',
       },
     },
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -19,7 +20,7 @@ module.exports = {
         name: 'settings',
       },
     },
-    `gatsby-transformer-remark`,
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,12 +30,12 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
+/*     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [],
       },
-    },
+    }, */
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
