@@ -24,6 +24,7 @@ const styles = theme => ({
   },
   flex: {
     flex: 1,
+    padding: '5px',
   },
   button: {
     margin: theme.spacing.unit,
@@ -39,14 +40,16 @@ const Navbar = (props) => {
         {...{ timeout: 500 }}>
         <AppBar position="fixed" color="secondary">
           <Toolbar>
-            <img src={props.logo} style={{ width: '100px' }} />
-            <Typography variant="title" color="inherit" className={classes.flex}>
+            <Link to="/">
+              <img src="https://www.google.com/a/khyateh.com/images/logo.gif" style={{ width: '160px' }} />
+            </Link>
+            <Typography variant="display2" color="inherit" className={classes.flex}>
               {props.title}
             </Typography>
             <Button component={GatsbyLink} to="/about" className={classes.button} variant="raised" color="secondary">
               About Us
             </Button>
-            <Button component={GatsbyLink} to="/contact"  className={classes.button} variant="raised" color="secondary">
+            <Button component={GatsbyLink} to="/contact" className={classes.button} variant="raised" color="secondary">
               Contact
             </Button>
             <IconButton href="https://github.com/partha360/finiteloop-gatsby-netlifyCMS-ReactJS" target="_new" color="inherit" aria-label="Menu">

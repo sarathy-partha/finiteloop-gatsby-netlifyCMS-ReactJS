@@ -5,7 +5,7 @@ import Grid from 'material-ui/Grid';
 
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { IconButton } from 'material-ui';
 import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
 import PlayArrowIcon from 'material-ui-icons/PlayArrow';
@@ -13,25 +13,31 @@ import SkipNextIcon from 'material-ui-icons/SkipNext';
 import Divider from 'material-ui/Divider';
 
 import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
+import Fade from 'material-ui/transitions/Fade';
+import Grow from 'material-ui/transitions/Grow';
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
+  teams: {
+    display: 'flex',
+    minHeight: '100%',
+    alignItems: 'stretch',
+    justifyContent: 'center',
   },
   card: {
     display: 'flex',
     //maxHeight: '550px',
-    maxWidth: '600px',
     marginTop: '5px',
-    textOverflow: 'ellipsis',
+    flex: 1,
+    maxWidth: '630px',
+    minHeight: '100%',
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
+    minHeight: '100%',
   },
   content: {
-    flex: '1 0 auto',
   },
   cover: {
     width: '100%',
@@ -44,16 +50,14 @@ const styles = theme => ({
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
     justifyContent: 'space-evenly',
+
   },
   icons: {
     paddingLeft: '5px',
   },
-  team: {
-    display: 'flex',
-  }
 });
 
-export const AboutPageTemplate = ({ props, title, content, contentComponent, teams, teamTitle, teamDescription }) => {
+export const AboutPageTemplate = ({ props, title, content, contentComponent, teams, teamTitle, teamDescription, timer }) => {
   const PageContent = contentComponent || Content
   const { classes, theme } = props;
   return (
@@ -67,48 +71,50 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
         {teamDescription}
       </Typography>
       <Divider />
-      <Grid container item xs spacing={0} className={classes.root}
-        className={classes.team}
-        alignItems="stretch"
-        direction="row"
-        justify="center">
+      <Grid container spacing={0} className={classes.teams}>
         {teams
-          .map(({ person }) => (
-            <div key={person.name} >
-              <Grid xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
-                <Card className={classes.card} >
-                  <div className={classes.details}>
-                    <CardContent className={classes.content}>
-                      <Typography variant="headline">{person.name}</Typography>
-                      <Typography variant="subheading" color="textSecondary">
-                        {person.quote}
-                      </Typography>
-                    </CardContent>
-                    <div className={classes.controls}>
-                      <IconButton href={person.fbsiteurl} target="_new" color="inherit" aria-label="Menu">
-                        <FbIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                      </IconButton>
-                      <IconButton href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
-                        <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                      </IconButton>
-                      <IconButton href={person.twtrsiteurl} target="_new" aria-label="Next">
-                        <TwtrIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                      </IconButton>
-                      <IconButton href={person.githubsiteurl} target="_new" aria-label="Next">
-                        <GitHubIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                      </IconButton>
-                    </div>
-                    <Divider />
-                  </div>
-                  <CardMedia
-                    className={classes.cover}
-                    image={person.avatar}
-                    title={person.name}
-                  />
-                </Card>
-              </Grid>
-            </div>
-          ))}
+          .map(({ person }) => {
+            timer+=500;
+            return (
+              <div key={person.name} >
+                <Grow in
+                  style={{ transformOrigin: '0 0 0' }}
+                  {...{ timeout: timer }}>
+                  <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
+                    <Card className={classes.card}>
+                      <div className={classes.details} style={{ backgroundColor: 'dimgray' }}>
+                        <CardContent className={classes.content}>
+                          <Typography variant="headline">{person.name}</Typography>
+                          <Typography variant="subheading" color="textSecondary">
+                            {person.quote}
+                          </Typography>
+                        </CardContent>
+                        <div className={classes.controls}>
+                          <IconButton href={person.fbsiteurl} target="_new" color="inherit" aria-label="Menu">
+                            <FbIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                          </IconButton>
+                          <IconButton href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
+                            <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                          </IconButton>
+                          <IconButton href={person.twtrsiteurl} target="_new" aria-label="Next">
+                            <TwtrIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                          </IconButton>
+                          <IconButton href={person.githubsiteurl} target="_new" aria-label="Next">
+                            <GitHubIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                          </IconButton>
+                        </div>
+                      </div>
+                      <CardMedia
+                        className={classes.cover}
+                        image={person.avatar}
+                        title={person.name}
+                      />
+                    </Card>
+                  </Grid>
+                </Grow>
+              </div>
+            )
+          })}
       </Grid>
       <div>
       </div>
@@ -131,6 +137,7 @@ const AboutPageTemplateWrapper = (props) => {
             teamDescription={aboutusData.frontmatter.teamDescription}
             teams={aboutusData.frontmatter.team}
             props={props}
+            timer={1000}
           />
         ))
       }
@@ -140,39 +147,39 @@ const AboutPageTemplateWrapper = (props) => {
 
 export const aboutPageQuery = graphql`
   query AboutPage($path: String!) {
-            allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
-            edges {
-          node {
-            html
+          allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
+          edges {
+        node {
+          html
             id
-          frontmatter {
-            path
+        frontmatter {
+          path
             title
-          image
-          teamTitle
-          teamDescription
+        image
+        teamTitle
+        teamDescription
             team {
-            person {
-              name
-              title
-              avatar
-              quote
-              fbsiteurl
-              twtrsiteurl
-              lnkdnsiteurl
-              githubsiteurl
-        }
-      }
-    }
+          person {
+        name
+        title
+        avatar
+        quote
+        fbsiteurl
+        twtrsiteurl
+        lnkdnsiteurl
+        githubsiteurl
   }
+}
+}
+}
 }
 }
 }
 `
 
-AboutPageTemplateWrapper.PropTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+AboutPageTemplateWrapper.propTypes = {
+  classes: propTypes.object.isRequired,
+  theme: propTypes.object.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(AboutPageTemplateWrapper);

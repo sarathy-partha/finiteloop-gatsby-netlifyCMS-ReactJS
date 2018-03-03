@@ -14,7 +14,9 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
       <Navbar title={settings.frontmatter.siteTitle} logo={settings.frontmatter.logo} />
-      {children()}
+      <div style={{marginTop: '70px'}}>
+        {children()}
+      </div>
     </div>
   )
 }

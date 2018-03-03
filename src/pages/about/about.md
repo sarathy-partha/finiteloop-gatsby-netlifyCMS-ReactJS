@@ -13,19 +13,10 @@ team:
       lnkdnsiteurl: test
       githubsiteurl: test
       quote: 
-        17+ years in IT and into various technologies, solutions & groups.
-        Started my career in System i technologies (iSeries, RPG, DB2, LANSA)
-        and moved to Microsoft platform since 2010 focusing on SharePoint and
-        .NET.
-
-
-        Currently focusing on UI, Frontend, Architecting Web Sites through
-        modern & open tech stacks, cross platform app architecture. Can still
-        code embracing clean code.
-
-
-        I aspire to be a Thought Leader, Technology Evangelist focusing on
-        Customer & User experience, Automation.
+        Prebiously leading Web Technologies & UI Practise for a leading IT services organisation.
+        Have built a pracise which has grown from 0 to 200+ in 2 years accounting to 20% of Digital revenue. Hard core architect.
+        Eat, Love and Pray clean architecture & clean code
+        Changes his mobile at least once in a quarter. Tries out new things at ease being it a gadget, tech, framework or anything digital.
       avatar: http://khyateh.com/wp-content/uploads/2018/01/AAEAAQAAAAAAAAxqAAAAJDNkZjQ1ZDg2LTAxMWUtNDliOS1hYWJjLTk3MmRiNzg3NTBmOA-blackwhite.jpg
       name: Partha
       title: Solution Architect
