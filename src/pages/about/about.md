@@ -17,12 +17,12 @@ team:
       lnkdnsiteurl: test
       name: Partha
       quote: >-
-        Previously leading Web Technologies & UI Practise for a leading IT
-        services organisation. Have built a practise which has grown from 0 to
-        200+ in 2 years accounting to 20% of Digital revenue. Hard core
-        architect. Eat, Love and Pray clean architecture & clean code Changes
-        his mobile at least once in a quarter. Tries out new things at ease
-        being it a gadget, tech, framework or anything digital.
+        Previously led Web Technologies & UI Practise for a leading IT services
+        organisation. Have built a practise which has grown from 0 to 200+ in 2
+        years accounting to 20% of Digital revenue. Hard core architect. Eat,
+        Love and Pray clean architecture & clean code. Changes his mobile at
+        least once in a quarter. Tries out new things at ease being it a gadget,
+        technology, framework or anything digital.
       title: Solution Architect
       twtrsiteurl: test
   - person:
