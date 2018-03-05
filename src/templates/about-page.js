@@ -14,7 +14,6 @@ import Divider from 'material-ui/Divider';
 
 import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
 import Fade from 'material-ui/transitions/Fade';
-import Grow from 'material-ui/transitions/Grow';
 
 const styles = theme => ({
   teams: {
@@ -57,7 +56,7 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
   const { classes, theme } = props;
   return (
     <section>
-      <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+      <h2>
         {title}
       </h2>
       <h2>{teamTitle}</h2>
@@ -72,7 +71,7 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
             timer+=500;
             return (
               <div key={person.name} >
-                <Grow in
+                <Fade in
                   style={{ transformOrigin: '0 0 0' }}
                   {...{ timeout: timer }}>
                   <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
@@ -106,7 +105,7 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
                       />
                     </Card>
                   </Grid>
-                </Grow>
+                </Fade>
               </div>
             )
           })}
