@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import withRoot from '../withRoot';
 
 import Navbar from '../components/Navbar'
+import Footer from '../components/footer'
+
 import './all.sass'
 import 'typeface-roboto'
 
@@ -17,6 +19,7 @@ const TemplateWrapper = ({ children, data }) => {
       <div style={{marginTop: '70px'}}>
         {children()}
       </div>
+      <Footer />
     </div>
   )
 }
