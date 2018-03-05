@@ -10,8 +10,7 @@ teamDescription: >-
   product development and consulting expertise. We listen, learn, and lead.
 team:
   - person:
-      avatar: >-
-        /img/team/Partha.jpg
+      avatar: /img/20245701_10213173409842317_2749298608033622687_n.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -19,10 +18,10 @@ team:
       quote: >-
         Previously led Web Technologies & UI Practise for a leading IT services
         organisation. Have built a practise which has grown from 0 to 200+ in 2
-        years accounting to 20% of Digital revenue. Eat,
-        Love and Pray clean architecture & clean code. Changes his mobile at
-        least once in a quarter. Tries out new things at ease being it a gadget,
-        technology, framework or anything digital.
+        years accounting to 20% of Digital revenue. Eat, Love and Pray clean
+        architecture & clean code. Changes his mobile at least once in a
+        quarter. Tries out new things at ease being it a gadget, technology,
+        framework or anything digital.
       title: Solution Architect
       twtrsiteurl: test
   - person:
@@ -68,8 +67,7 @@ team:
       title: Solution Architect
       twtrsiteurl: test
   - person:
-      avatar: >-
-        /img/team/Shashi.jpg
+      avatar: /img/team/Shashi.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -84,8 +82,7 @@ team:
       title: Architect
       twtrsiteurl: test
   - person:
-      avatar: >-
-        /img/team/Sudarshan.jpg
+      avatar: /img/team/Sudarshan.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
