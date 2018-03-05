@@ -1,9 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import github from '../img/github-icon.svg'
-import logo from '../img/KhyatehLongerLogo.png'
-
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -15,6 +12,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Icon from 'material-ui/Icon';
 import Fade from 'material-ui/transitions/Fade';
 
+import logo from '../img/khyatehlogo.png'
 import { GitHubIcon } from './icons/icons'
 import GatsbyLink from 'gatsby-link';
 
@@ -41,7 +39,7 @@ const Navbar = (props) => {
         <AppBar position="fixed" color="secondary">
           <Toolbar>
             <Link to="/">
-              <img src="https://www.google.com/a/khyateh.com/images/logo.gif" style={{ width: '160px' }} />
+              <img src={logo} style={{ width: '70px' }} />
             </Link>
             <Typography variant="display2" color="inherit" className={classes.flex}>
               {props.title}
