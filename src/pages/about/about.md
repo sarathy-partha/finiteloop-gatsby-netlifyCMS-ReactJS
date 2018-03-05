@@ -11,7 +11,7 @@ teamDescription: >-
 team:
   - person:
       avatar: >-
-        http://khyateh.com/wp-content/uploads/2018/01/AAEAAQAAAAAAAAxqAAAAJDNkZjQ1ZDg2LTAxMWUtNDliOS1hYWJjLTk3MmRiNzg3NTBmOA-blackwhite.jpg
+        /img/team/Partha.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -19,14 +19,14 @@ team:
       quote: >-
         Previously led Web Technologies & UI Practise for a leading IT services
         organisation. Have built a practise which has grown from 0 to 200+ in 2
-        years accounting to 20% of Digital revenue. Hard core architect. Eat,
+        years accounting to 20% of Digital revenue. Eat,
         Love and Pray clean architecture & clean code. Changes his mobile at
         least once in a quarter. Tries out new things at ease being it a gadget,
         technology, framework or anything digital.
       title: Solution Architect
       twtrsiteurl: test
   - person:
-      avatar: 'http://khyateh.com/wp-content/uploads/2015/02/Anand.jpeg'
+      avatar: /img/team/Anand.jpeg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -40,7 +40,7 @@ team:
       title: Director
       twtrsiteurl: test
   - person:
-      avatar: 'http://khyateh.com/wp-content/uploads/2015/02/Subbu.jpeg'
+      avatar: /img/team/Subbu.jpeg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -54,7 +54,7 @@ team:
       title: Solution Manager
       twtrsiteurl: test
   - person:
-      avatar: 'http://khyateh.com/wp-content/uploads/2015/02/Sapnil.jpeg'
+      avatar: /img/team/Sapnil.jpeg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -69,7 +69,7 @@ team:
       twtrsiteurl: test
   - person:
       avatar: >-
-        http://khyateh.com/wp-content/uploads/2018/01/17881428_1870233263217122_431803728333373440_n-blackwhite.jpg
+        /img/team/Shashi.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -85,7 +85,7 @@ team:
       twtrsiteurl: test
   - person:
       avatar: >-
-        http://khyateh.com/wp-content/uploads/2018/01/AAEAAQAAAAAAAAoKAAAAJDRmM2Y0YTljLWFmNmEtNDY0NC04MjVjLWI4MmQ0ZTIwNDI2Zg-blackwhite.jpg
+        /img/team/Sudarshan.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -98,7 +98,7 @@ team:
       title: Architect – Service Design
       twtrsiteurl: test
   - person:
-      avatar: 'http://khyateh.com/wp-content/uploads/2015/02/Umesh.jpeg'
+      avatar: /img/team/Umesh.jpeg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
@@ -112,7 +112,7 @@ team:
       title: Architect
       twtrsiteurl: test
   - person:
-      avatar: 'http://khyateh.com/wp-content/uploads/2018/01/1nuMiH50-blackwhite.jpg'
+      avatar: /img/team/Sharad.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
