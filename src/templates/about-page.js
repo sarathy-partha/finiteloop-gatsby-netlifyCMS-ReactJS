@@ -19,29 +19,24 @@ import Grow from 'material-ui/transitions/Grow';
 const styles = theme => ({
   teams: {
     display: 'flex',
-    minHeight: '100%',
     alignItems: 'stretch',
     justifyContent: 'center',
   },
   card: {
     display: 'flex',
-    //maxHeight: '550px',
     marginTop: '5px',
     flex: 1,
-    maxWidth: '630px',
+    maxWidth: '550px',
     minHeight: '100%',
   },
   details: {
     display: 'flex',
     flexDirection: 'column',
-    width: '100%',
+    width: '50%',
     minHeight: '100%',
   },
-  content: {
-  },
   cover: {
-    width: '100%',
-    //height: 151,
+    width: '50%',
   },
   controls: {
     display: 'flex',
