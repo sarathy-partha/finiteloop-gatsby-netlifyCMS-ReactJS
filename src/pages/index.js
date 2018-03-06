@@ -67,7 +67,9 @@ class IndexPage extends React.Component {
           showArrows={true}
           showThumbs={false}
           infiniteLoop={true}
-          autoPlay={false}
+          autoPlay={true}
+          infiniteLoop={true}
+          dynamicHeight={true}
         >
           <div>
             <img src="img/Slider-Home.jpg" />
@@ -81,19 +83,43 @@ class IndexPage extends React.Component {
           </div>
           <div>
             <img src="img/Slider-SRS2.jpg" />
-            <p className="legend">Legend 2</p>
+            <div style={{ position: 'absolute', top: '10%', left: '65%' }}>
+              <div className={classes.caption}><i>finiteloop</i> is a cloud advisory, and technology solutions company.
+                <br />
+                <br />
+                We work with Service Design, Frontned, Cloud, Blockchain, Salesforce and other technologies
+              </div>
+            </div>
           </div>
           <div>
             <img src="img/SliderMain-HHH2.jpg" />
-            <p className="legend">Legend 3</p>
+            <div style={{ position: 'absolute', top: '10%', left: '65%' }}>
+              <div className={classes.caption}><i>finiteloop</i> is a cloud advisory, and technology solutions company.
+                <br />
+                <br />
+                We work with Service Design, Frontned, Cloud, Blockchain, Salesforce and other technologies
+              </div>
+            </div>
           </div>
           <div>
             <img src="img/SliderMain-TDH1.jpg" />
-            <p className="legend">Legend 3</p>
+            <div style={{ position: 'absolute', top: '10%', left: '65%' }}>
+              <div className={classes.caption}><i>finiteloop</i> is a cloud advisory, and technology solutions company.
+                <br />
+                <br />
+                We work with Service Design, Frontned, Cloud, Blockchain, Salesforce and other technologies
+              </div>
+            </div>
           </div>
           <div>
             <img src="img/SliderMain-Youth.jpg" />
-            <p className="legend">Legend 3</p>
+            <div style={{ position: 'absolute', top: '10%', left: '65%' }}>
+              <div className={classes.caption}><i>finiteloop</i> is a cloud advisory, and technology solutions company.
+                <br />
+                <br />
+                We work with Service Design, Frontned, Cloud, Blockchain, Salesforce and other technologies
+              </div>
+            </div>
           </div>
         </Carousel>
       </section>
