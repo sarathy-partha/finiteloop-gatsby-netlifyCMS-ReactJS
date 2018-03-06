@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'finiteloop',
+    siteUrl: `https://finiteloop.io`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -68,6 +69,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     /*     {
           resolve: 'gatsby-transformer-remark',
           options: {

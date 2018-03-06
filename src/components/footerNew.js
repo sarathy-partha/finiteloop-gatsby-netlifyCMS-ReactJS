@@ -36,19 +36,19 @@ const FooterNew = (props) => {
             <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
                 Case Studies
             </Button>
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" to="/about" className={classes.button}>
                 Team
             </Button>
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" href="https://github.com/finite-loop" target="_new" className={classes.button}>
                 Open Source
             </Button>
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" href="http://khyateh.com/labs/" target="_new" className={classes.button}>
                 Labs
             </Button>
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" href="http://khyateh.com/contact/" target="_new" className={classes.button}>
                 Contact Us
             </Button>
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" href="http://khyateh.com/privacypolicy/" target="_new" className={classes.button}>
                 Privacy Policy
             </Button>
         </div >
