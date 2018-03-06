@@ -36,7 +36,7 @@ const FooterNew = (props) => {
             <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
                 Case Studies
             </Button>
-            <Button color="secondary" to="/about" className={classes.button}>
+            <Button color="secondary" to="/about" component={GatsbyLink} className={classes.button}>
                 Team
             </Button>
             <Button color="secondary" href="https://github.com/finite-loop" target="_new" className={classes.button}>

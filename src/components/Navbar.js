@@ -66,7 +66,7 @@ class Navbar extends React.Component {
 
     const menuList = (
       <div className={classes.menuList}>
-        <IconButton to="/">
+        <IconButton component={GatsbyLink} to="/">
           <Icon>home</Icon>
         </IconButton>
         <Button component={GatsbyLink} to="/about" className={classes.button} color="primary">

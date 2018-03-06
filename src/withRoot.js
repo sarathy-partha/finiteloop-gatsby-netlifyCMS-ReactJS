@@ -27,9 +27,10 @@ function withRoot(Component) {
                     theme={this.pageContext.theme}
                     sheetsManager={this.pageContext.sheetsManager}
                 >
-                    {/* Reboot kickstart an elegant, consistent, and simple baseline to build upon. */}
-                    <Reboot />
-                    <Component {...this.props} />
+                    <div>
+                        <Reboot />
+                        <Component {...this.props} />
+                    </div>
                 </MuiThemeProvider>
             );
         }
