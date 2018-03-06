@@ -27,10 +27,8 @@ function withRoot(Component) {
                     theme={this.pageContext.theme}
                     sheetsManager={this.pageContext.sheetsManager}
                 >
-                    <div>
-                        <Reboot />
-                        <Component {...this.props} />
-                    </div>
+                    <Reboot />
+                    <Component {...this.props} />
                 </MuiThemeProvider>
             );
         }
