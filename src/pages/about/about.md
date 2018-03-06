@@ -10,11 +10,13 @@ teamDescription: >-
   product development and consulting expertise. We listen, learn, and lead.
 team:
   - person:
-      avatar: /img/20245701_10213173409842317_2749298608033622687_n.jpg
+      avatar: /img/team/Partha.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
+      twtrsiteurl: test
       name: Partha
+      background: 'gray'
       quote: >-
         Previously led Web Technologies & UI Practise for a leading IT services
         organisation. Have built a practise which has grown from 0 to 200+ in 2
@@ -23,13 +25,13 @@ team:
         quarter. Tries out new things at ease being it a gadget, technology,
         framework or anything digital.
       title: Solution Architect
-      twtrsiteurl: test
   - person:
       avatar: /img/team/Anand.jpeg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Anand
+      background: 'slategray'
       quote: >-
         Previously led the Cloud center of excellence for a leading IT services
         organisation. Tea Connoisseur, Gamer, Audiophile, and drives an old
@@ -44,6 +46,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Subbu
+      background: 'darkslategray'
       quote: >-
         Previously, a Senior institution builder at a global non-profit
         organisation. Creates technology infrastructure for the citizen sector.
@@ -58,6 +61,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Sapnil
+      background: 'dimgray'
       quote: >-
         Previously the lead architect for a global automotive giant. Smart
         cookie. The fastest learner in the team. Gets frustrated with low
@@ -72,6 +76,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Shashi
+      background: 'darkslategray'
       quote: >-
         Not interested in small challenges. The real principle engineer. Likes
         to be called a developer than architect. Has architected critical
@@ -87,6 +92,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Sudarshan
+      background: 'dimgray'
       quote: >-
         Returning to one’s root has taken much effort, Dwelling in my hut, I see
         nothing without, Rivers flow, flowers are red.
@@ -100,6 +106,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Umesh
+      background: 'slategray'
       quote: >-
         Previously a lead solutions architect for an IT major. Avid
         photographer. Drives an old Fiat and still thinks its the best car in
@@ -114,6 +121,7 @@ team:
       githubsiteurl: test
       lnkdnsiteurl: test
       name: Sharad
+      background: 'gray'
       quote: >-
         Easy-going. Intense. How he manages to be both? Meet him and you’ll find
         out. Ex-Adobe and NID Alum. If you find him to be more angsty about your

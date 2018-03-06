@@ -12,7 +12,6 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Icon from 'material-ui/Icon';
 import Fade from 'material-ui/transitions/Fade';
 
-import logo from '../img/khyatehlogo.png'
 import { GitHubIcon } from './icons/icons'
 import GatsbyLink from 'gatsby-link';
 
@@ -21,8 +20,11 @@ const styles = theme => ({
     flexGrow: 1,
   },
   flex: {
+    display: 'flex',
     flex: 1,
     padding: '5px',
+    fontFamily: "'Pacifico', cursive",
+    justifyContent: 'center'
   },
   button: {
     margin: theme.spacing.unit,
@@ -36,18 +38,18 @@ const Navbar = (props) => {
       <Fade in
         style={{ transformOrigin: '0 0 0' }}
         {...{ timeout: 500 }}>
-        <AppBar position="fixed" color="secondary">
+        <AppBar position="fixed" color="">
           <Toolbar>
             <Link to="/">
-              <img src={logo} style={{ width: '70px' }} />
+              <img src={props.logo} style={{ width: '70px' }} />
             </Link>
             <Typography variant="display2" color="inherit" className={classes.flex}>
               {props.title}
             </Typography>
-            <Button component={GatsbyLink} to="/about" className={classes.button} variant="raised" color="secondary">
+            <Button component={GatsbyLink} to="/about" className={classes.button} color="primary">
               About Us
             </Button>
-            <Button component={GatsbyLink} to="/contact" className={classes.button} variant="raised" color="secondary">
+            <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
               Contact
             </Button>
             <IconButton href="https://github.com/partha360/finiteloop-gatsby-netlifyCMS-ReactJS" target="_new" color="inherit" aria-label="Menu">

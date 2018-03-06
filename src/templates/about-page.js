@@ -44,7 +44,6 @@ const styles = theme => ({
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
     justifyContent: 'space-evenly',
-
   },
   icons: {
     paddingLeft: '5px',
@@ -75,8 +74,8 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
                   style={{ transformOrigin: '0 0 0' }}
                   {...{ timeout: timer }}>
                   <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
-                    <Card className={classes.card}>
-                      <div className={classes.details} style={{ backgroundColor: 'dimgray' }}>
+                    <Card className={classes.card} style={{ backgroundColor: person.background }}>
+                      <div className={classes.details} >
                         <CardContent className={classes.content}>
                           <Typography variant="headline">{person.name}</Typography>
                           <Typography variant="subheading" color="textSecondary">
@@ -158,16 +157,17 @@ export const aboutPageQuery = graphql`
         title
         avatar
         quote
+        background
         fbsiteurl
         twtrsiteurl
         lnkdnsiteurl
         githubsiteurl
-  }
-}
-}
-}
-}
-}
+                }
+              }
+            }
+          }
+        }
+    } 
 }
 `
 

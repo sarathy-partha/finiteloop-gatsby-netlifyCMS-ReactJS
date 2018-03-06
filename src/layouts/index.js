@@ -10,9 +10,10 @@ import Hidden from 'material-ui/Hidden';
 import Navbar from '../components/Navbar'
 import Footer from '../components/footer'
 
-import './all.sass'
+import './global.sass'
 import 'typeface-roboto'
 import BottomBar from '../components/BottomBar';
+import FooterNew from '../components/footerNew';
 
 const TemplateWrapper = ({ children, data }) => {
   const { markdownRemark: settings } = data
@@ -26,13 +27,15 @@ const TemplateWrapper = ({ children, data }) => {
         </div>
       </Hidden>
       <Hidden mdDown implementation="css">
-        <Footer />
+        <FooterNew />
       </Hidden>
       <Hidden lgUp implementation="css">
-        <div style={{ marginBottom: '70px', paddingLeft: '10px'  }}>
+        <div style={{ marginBottom: '70px', paddingLeft: '10px' }}>
           {children()}
         </div>
-        <BottomBar />
+        <FooterNew />
+        {//<BottomBar logo={settings.frontmatter.logo} />
+        }
       </Hidden>
     </div>
   )

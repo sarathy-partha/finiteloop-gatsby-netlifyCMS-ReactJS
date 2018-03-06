@@ -2,7 +2,6 @@ import React from 'react'
 import Link, { navigateTo } from 'gatsby-link'
 
 import github from '../img/github-icon.svg'
-import logo from '../img/khyatehlogo.png'
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
 import { GitHubIcon, FbIcon, TwtrIcon } from '../components/icons/icons';
 
@@ -55,7 +54,7 @@ class BottomBar extends React.Component {
         return (
             <div className={classes.root} >
                 <Link to="/">
-                    <img src={logo} style={{ height: '100%', width: '70px' }} />
+                    <img src={this.props.logo} style={{ height: '100%', width: '70px' }} />
                 </Link>
                 <BottomNavigation
                     value={value}

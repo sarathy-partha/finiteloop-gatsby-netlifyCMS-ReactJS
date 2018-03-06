@@ -7,7 +7,9 @@ import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
 // It's optional.
 const theme = createMuiTheme({
   palette: {
-    type: 'dark',
+    primary: { main: '#8db2a6' },
+    secondary: { main: '#D65745' },
+    contrastThreshold: 3,
   },
 });
 
