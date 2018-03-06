@@ -1,9 +1,9 @@
 ---
 templateKey: global-settings
-siteTitle: 'finiteloop'
-siteUrl: 'https://finiteloop.netlify.com'
-siteDescription: 'finite minds, infinite ideas, best fit solution'
-logo: /img/khyatehlongerlogo.png
+siteTitle: finiteloop
+siteUrl: 'https://finiteloop.io'
+siteDescription: 'finite minds, infinite ideas,right solution'
+logo: /img/khyatehlogo.png
 socialMediaCard:
   twitterCreatorAccount: '@partha360'
   twitterSiteAccount: ''
