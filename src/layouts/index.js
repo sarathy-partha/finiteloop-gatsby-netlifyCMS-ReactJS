@@ -20,7 +20,7 @@ const TemplateWrapper = ({ children, data }) => {
   return (
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
-      <Hidden mdDown implementation="css">
+      <Hidden implementation="css">
         <Navbar title={settings.frontmatter.siteTitle} logo={settings.frontmatter.logo} />
         <div style={{ marginTop: '70px', paddingLeft: '10px' }}>
           {children()}
@@ -30,9 +30,6 @@ const TemplateWrapper = ({ children, data }) => {
         <FooterNew />
       </Hidden>
       <Hidden lgUp implementation="css">
-        <div style={{ marginBottom: '70px', paddingLeft: '10px' }}>
-          {children()}
-        </div>
         <FooterNew />
         {//<BottomBar logo={settings.frontmatter.logo} />
         }
