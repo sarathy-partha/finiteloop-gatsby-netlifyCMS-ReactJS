@@ -29,7 +29,7 @@ const styles = theme => ({
     fontSize: '2.8vmin',
     minHeight: '0px',
     minWidth: '0%',
-    maxHeight: '200px',
+    maxHeight: '250px',
     maxWidth: '350px',
     height: 'auto',
     opacity: 1,

@@ -1,3 +1,7 @@
+const config = require('./config/SiteConfig');
+
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
 module.exports = {
   siteMetadata: {
     title: 'finiteloop',
@@ -13,7 +17,6 @@ module.exports = {
         name: 'pages',
       },
     },
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -21,7 +24,6 @@ module.exports = {
         name: 'settings',
       },
     },
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -29,32 +31,65 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+        ],
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitleAlt,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icons: [
+          {
+            src: '/img/logos/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/img/logos/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: "./src/favicon.png",
         injectHTML: true,
         icons: {
-          android: true,
+          android: false,
           appleIcon: true,
-          appleStartup: true,
-          coast: false,
+          appleStartup: false,
+          coast: true,
           favicons: true,
-          firefox: true,
+          firefox: false,
           twitter: false,
           yandex: false,
-          windows: false
+          windows: true,
         }
       }
     },
-      `gatsby-plugin-sitemap`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    `gatsby-plugin-netlify`,
+    'gatsby-plugin-offline',
   ],
 };

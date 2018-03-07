@@ -28,6 +28,9 @@ const styles = theme => ({
     maxWidth: '550px',
     minHeight: '100%',
   },
+  content: {
+    color: 'white',
+  },
   details: {
     display: 'flex',
     flexDirection: 'column',
@@ -77,8 +80,8 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
                     <Card className={classes.card} style={{ backgroundColor: person.background }}>
                       <div className={classes.details} >
                         <CardContent className={classes.content}>
-                          <Typography variant="headline">{person.name}</Typography>
-                          <Typography variant="subheading" color="textSecondary">
+                          <Typography color="inherit" variant="headline">{person.name}</Typography>
+                          <Typography variant="subheading" color="inherit">
                             {person.quote}
                           </Typography>
                         </CardContent>
