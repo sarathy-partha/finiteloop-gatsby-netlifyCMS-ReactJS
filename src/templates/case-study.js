@@ -2,29 +2,27 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({
+export const CaseStudyTemplate = ({
   content,
   contentComponent,
   description,
   title,
   helmet,
+  image,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section>
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+      <div>
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
             <p>{description}</p>
+            <img src={image} style={{width: '100%'}}/>
             <PostContent content={content} />
           </div>
-        </div>
-      </div>
     </section>
   )
 }
@@ -33,25 +31,38 @@ export default props => {
   const { markdownRemark: post } = props.data
 
   return (
-    <BlogPostTemplate
+    <CaseStudyTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`Blog | ${post.frontmatter.title}`} />}
+      helmet={<Helmet title={`Case Study | ${post.frontmatter.title}`} />}
       title={post.frontmatter.title}
+      image={post.frontmatter.image}
     />
   )
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query CaseStudyByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        path
-        date(formatString: "MMMM DD, YYYY")
+        image
         title
-        description
+        customer {
+          name
+          profile
+          date
+          web
+        }
+        casestudy {
+          description
+          focus
+          challenges
+          solution
+          benefits
+          technology
+        }
       }
     }
   }

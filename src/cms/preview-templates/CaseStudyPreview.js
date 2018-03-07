@@ -1,12 +1,12 @@
 import React from 'react';
-import { BlogPostTemplate } from '../../templates/blog-post';
+import { CaseStudyTemplate } from '../../templates/case-study';
 
 const BlogPostPreview = ({ entry, widgetFor }) => (
-  <BlogPostTemplate
+  <CaseStudyTemplate
     content={widgetFor('body')}
     description={entry.getIn(['data', 'description'])}
     title={entry.getIn(['data', 'title'])}
   />
 );
 
-export default BlogPostPreview;
+export default CaseStudyPreview;

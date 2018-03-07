@@ -29,18 +29,33 @@ collections:
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
           - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
 
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "casestudy"
+    label: "Case Study"
+    folder: "src/pages/case-studies"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Customer"
+        name: "customer"
+        widget: object
+        fields:
+          - {label: "Name", name: name, widget: string, default: "Emmet"}
+          - {label: "Profile", name: profile, widget: text, default: "Customer Profile"}
+          - {label: "Date", name: date, widget: string, default: "Date"}
+          - {label: "Web", name: web, widget: string, default: "url"}
+      - label: "Case Study"
+        name: "casestudy"
+        widget: object
+        fields:
+          - {label: "Description", name: description, widget: text, default: "Description"}
+          - {label: "Focus", name: focus, widget: text, default: "Focus"}
+          - {label: "Challenges", name: challenges, widget: text, default: "challenges"}
+          - {label: "Solution", name: solution, widget: text, default: "solution"}
+          - {label: "Benefits", name: benefits, widget: text, default: "benefits"}
+          - {label: "Technology", name: technology, widget: text, default: "technology"}
 
   - name: "pages"
     label: "Pages"

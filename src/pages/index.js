@@ -58,7 +58,6 @@ class IndexPage extends React.Component {
 
   render() {
     const { data, classes } = this.props
-    const { edges: posts } = data.allMarkdownRemark
     const { open } = this.state;
 
     return (
@@ -127,24 +126,6 @@ class IndexPage extends React.Component {
   }
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
-  }
-`
 IndexPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
