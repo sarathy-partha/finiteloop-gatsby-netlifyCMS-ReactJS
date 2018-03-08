@@ -26,7 +26,7 @@ const styles = theme => ({
     padding: '5px 15px 10px',
     letterSpacing: '0px',
     fontWeight: 200,
-    fontSize: '2.8vmin',
+    fontSize: '2.6vmin',
     minHeight: '0px',
     minWidth: '0%',
     maxHeight: '250px',

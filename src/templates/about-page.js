@@ -1,8 +1,6 @@
 import React from 'react'
-import Content, { HTMLContent } from '../components/Content'
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
-
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import propTypes from 'prop-types';
@@ -14,6 +12,8 @@ import Divider from 'material-ui/Divider';
 
 import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
 import Fade from 'material-ui/transitions/Fade';
+
+import Content, { HTMLContent } from '../components/Content'
 
 const styles = theme => ({
   teams: {
@@ -58,13 +58,10 @@ export const AboutPageTemplate = ({ props, title, content, contentComponent, tea
   const { classes, theme } = props;
   return (
     <section>
-      <h2>
-        {title}
-      </h2>
       <h2>{teamTitle}</h2>
       <Divider />
       <Typography variant="headline" gutterBottom>
-        {teamDescription}
+        <PageContent content={content} />
       </Typography>
       <Divider />
       <Grid container spacing={0} className={classes.teams}>
@@ -134,6 +131,8 @@ const AboutPageTemplateWrapper = (props) => {
             teams={aboutusData.frontmatter.team}
             props={props}
             timer={1000}
+            content={aboutusData.html}
+            contentComponent={HTMLContent}
           />
         ))
       }
@@ -145,26 +144,26 @@ export const aboutPageQuery = graphql`
   query AboutPage($path: String!) {
           allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
           edges {
-        node {
-          html
-            id
-        frontmatter {
-          path
-            title
-        image
-        teamTitle
-        teamDescription
-            team {
-          person {
-        name
-        title
-        avatar
-        quote
-        background
-        fbsiteurl
-        twtrsiteurl
-        lnkdnsiteurl
-        githubsiteurl
+          node {
+            html
+              id
+          frontmatter {
+            path
+              title
+          image
+          teamTitle
+          teamDescription
+              team {
+            person {
+                name
+                title
+                avatar
+                quote
+                background
+                fbsiteurl
+                twtrsiteurl
+                lnkdnsiteurl
+                githubsiteurl
                 }
               }
             }

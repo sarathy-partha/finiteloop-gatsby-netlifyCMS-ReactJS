@@ -33,7 +33,7 @@ const FooterNew = (props) => {
     const { classes } = props;
     return (
         <div className={classes.root} >
-            <Button color="secondary" href="http://khyateh.com/casestudy/" target="_new" className={classes.button}>
+            <Button color="secondary" to="/case-study" component={GatsbyLink} className={classes.button}>
                 Case Studies
             </Button>
             <Button color="secondary" to="/about" component={GatsbyLink} className={classes.button}>

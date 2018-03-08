@@ -16,13 +16,13 @@ export const CaseStudyTemplate = ({
     <section>
       {helmet || ''}
       <div>
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <img src={image} style={{width: '100%'}}/>
-            <PostContent content={content} />
-          </div>
+        <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+          {title}
+        </h1>
+        <p>{description}</p>
+        <img src={image} style={{ width: '100%' }} />
+        <PostContent content={content} />
+      </div>
     </section>
   )
 }
@@ -49,10 +49,10 @@ export const pageQuery = graphql`
       frontmatter {
         image
         title
+        date
         customer {
           name
           profile
-          date
           web
         }
         casestudy {
