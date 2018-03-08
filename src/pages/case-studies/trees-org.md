@@ -2,7 +2,7 @@
 templateKey: case-study
 path: /trees-org
 title: Trees.org
-date: Date
+date: 2014-06-03T00:00:00+05:30
 customer:
   name: Trees.org
   profile: >-
