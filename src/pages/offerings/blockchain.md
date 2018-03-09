@@ -1,6 +1,6 @@
 ---
 templateKey: offering
-image: /img/kolam.png
+image: /img/OrgTrans.png
 path: /blockchain
 title: Blockchain
 align: left
