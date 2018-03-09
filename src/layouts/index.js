@@ -11,7 +11,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/footer'
 
 import './global.sass'
-import 'typeface-roboto'
+//import 'typeface-roboto'
 import BottomBar from '../components/BottomBar';
 import FooterNew from '../components/footerNew';
 
@@ -21,8 +21,8 @@ const TemplateWrapper = ({ children, data }) => {
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
       <Hidden implementation="css">
-        <Navbar title={settings.frontmatter.siteTitle} logo={settings.frontmatter.logo} />
-        <div style={{ marginTop: '70px', paddingLeft: '10px' }}>
+        <Navbar title={settings.frontmatter.siteDescription} logo={settings.frontmatter.logo} />
+        <div style={{ marginTop: '70px'}}>
           {children()}
         </div>
       </Hidden>

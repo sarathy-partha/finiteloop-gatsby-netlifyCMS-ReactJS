@@ -19,8 +19,8 @@ module.exports = {
     backgroundColor: '#2b2e3c',
 
     // Settings for typography.js
-    headerFontFamily: 'Roboto',
-    bodyFontFamily: 'Open Sans',
+    headerFontFamily: 'Futura',
+    bodyFontFamily: 'Futura',
     baseFontSize: '18px',
 
 };

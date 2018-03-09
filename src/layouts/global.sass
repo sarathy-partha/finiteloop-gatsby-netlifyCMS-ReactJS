@@ -1,8 +1,12 @@
-body
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-// Helper Classes
-body html
-  min-height: 100%
+@mixin font($font-family, $font-file)
+  @font-face
+    font-family: $font-family
+    src: url($font-file+'.otf') format('opentype')
+
+@include font('Futura', '../fonts/FuturaMedium')
+
+body, body *
+  font-family: Futura
 
 .full-width-image-container
   width: 100vw
@@ -20,6 +24,4 @@ body html
 .margin-top-0
   margin-top: 0 !important
 
-  @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
-
-  @import url('https://fonts.googleapis.com/css?family=Righteous')
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')

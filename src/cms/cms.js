@@ -1,8 +1,8 @@
 import CMS from 'netlify-cms'
 
-import AboutPagePreview from './preview-templates/AboutPagePreview'
+import TeamsPagePreview from './preview-templates/TeamsPagePreview'
 import CaseStudyPreview from './preview-templates/CaseStudyPreview'
 
 CMS.registerPreviewStyle('/styles.css')
-CMS.registerPreviewTemplate('about', AboutPagePreview)
+CMS.registerPreviewTemplate('teams', TeamsPagePreview)
 CMS.registerPreviewTemplate('case-study', CaseStudyPreview)

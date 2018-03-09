@@ -26,6 +26,8 @@ const styles = theme => ({
         alignItems: 'center',
         padding: theme.spacing.unit,
         flexWrap: 'wrap',
+        backgroundColor: '#70A999',
+        color: 'white',
     },
 });
 
@@ -33,22 +35,22 @@ const FooterNew = (props) => {
     const { classes } = props;
     return (
         <div className={classes.root} >
-            <Button color="secondary" to="/case-study" component={GatsbyLink} className={classes.button}>
+            <Button color="inherit" to="/case-studies" component={GatsbyLink} className={classes.button}>
                 Case Studies
             </Button>
-            <Button color="secondary" to="/about" component={GatsbyLink} className={classes.button}>
+            <Button color="inherit" to="/team" component={GatsbyLink} className={classes.button}>
                 Team
             </Button>
-            <Button color="secondary" href="https://github.com/finite-loop" target="_new" className={classes.button}>
+            <Button color="inherit" href="https://github.com/finite-loop" target="_new" className={classes.button}>
                 Open Source
             </Button>
-            <Button color="secondary" href="http://khyateh.com/labs/" target="_new" className={classes.button}>
-                Labs
+            <Button color="inherit" href="http://khyateh.com/labs/" target="_new" className={classes.button}>
+                The Way
             </Button>
-            <Button color="secondary" href="http://khyateh.com/contact/" target="_new" className={classes.button}>
+            <Button color="inherit" href="http://khyateh.com/contact/" target="_new" className={classes.button}>
                 Contact Us
             </Button>
-            <Button color="secondary" href="http://khyateh.com/privacypolicy/" target="_new" className={classes.button}>
+            <Button color="inherit" href="http://khyateh.com/privacypolicy/" target="_new" className={classes.button}>
                 Privacy Policy
             </Button>
         </div >

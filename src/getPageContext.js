@@ -4,8 +4,15 @@ import { SheetsRegistry } from 'jss';
 import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
 
 // A theme with custom primary and secondary color.
-// It's optional.
+const fontWeightMedium = 600;
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Futura',
+    fontWeight: fontWeightMedium,
+  },
+  body1: {
+    fontWeight: fontWeightMedium,
+  },
   palette: {
     primary: { main: '#8db2a6' },
     secondary: { main: '#D65745' },

@@ -17,7 +17,6 @@ import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import List from 'material-ui/List';
 
-import { GitHubIcon } from './icons/icons'
 import GatsbyLink from 'gatsby-link';
 
 const styles = theme => ({
@@ -31,13 +30,28 @@ const styles = theme => ({
     flex: 1,
     justifyContent: 'center',
     padding: '0px',
-    fontFamily: "'Righteous', cursive",
     flexWrap: 'wrap',
+  },
+  logo: {
+    /* Rectangle: */
+    border: '2px solid #70A898',
+    /* FINITELOOP: */
+    fontSize: '20px',
+    color: '#70A999',
+    letterSpacing: '0.71px',
+    textDecoration: 'none',
+    padding: '5px 10px 5px 10px',
+    textTransform: 'uppercase',
   },
   button: {
     //display: 'flex',
-    //margin: theme.spacing.unit,
+    margin: theme.spacing.unit,
     flexWrap: 'wrap',
+    /* OUR PEOPLE: */
+    fontSize: '20px',
+    color: '#5C5C5C',
+    letterSpacing: '0.71px',
+    textAlign: 'center'
   },
   menuList: {
     width: 'auto',
@@ -69,17 +83,16 @@ class Navbar extends React.Component {
         <IconButton component={GatsbyLink} to="/">
           <Icon>home</Icon>
         </IconButton>
-        <Button component={GatsbyLink} to="/about" className={classes.button} color="primary">
-          About Us
+        <Button component={GatsbyLink} to="/team" className={classes.button} color="primary">
+          Our People
         </Button>
-        <Divider />
         <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
-          Contact
+          The Way
+        </Button>
+        <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
+          Get in Touch
         </Button>
         <Divider />
-        <IconButton className={classes.button} href="https://github.com/partha360/finiteloop-gatsby-netlifyCMS-ReactJS" target="_new" color="inherit" aria-label="Menu">
-          <GitHubIcon />
-        </IconButton>
       </div>
     );
 
@@ -90,23 +103,24 @@ class Navbar extends React.Component {
           {...{ timeout: 1000 }}>
           <AppBar position="fixed" color="default">
             <Toolbar>
-              <Link to="/">
-                <img src={this.props.logo} style={{ width: '80px' }} />
+              <Link to="/" className={classes.logo}>
+                <Typography color="inherit" component="span">
+                  {this.props.title}
+                </Typography>
               </Link>
               <Typography variant="display2" color="inherit" className={classes.flex}>
-                {this.props.title}
               </Typography>
               <Hidden xsDown implementation="css">
                 <div>
-                  <Button component={GatsbyLink} to="/about" className={classes.button} color="primary">
-                    About Us
+                  <Button component={GatsbyLink} to="/team" className={classes.button} color="primary">
+                    Our People
+                </Button>
+                  <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
+                    The Way
                   </Button>
                   <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
-                    Contact
-                 </Button>
-                  <IconButton className={classes.button} href="https://github.com/partha360/finiteloop-gatsby-netlifyCMS-ReactJS" target="_new" color="inherit" aria-label="Menu">
-                    <GitHubIcon />
-                  </IconButton>
+                    Get in Touch
+                  </Button>
                 </div>
               </Hidden>
               <Hidden smUp implementation="css">

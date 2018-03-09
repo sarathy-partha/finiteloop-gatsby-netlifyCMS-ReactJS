@@ -1,7 +1,7 @@
 ---
 templateKey: case-study
 path: /ewb-canada
-image: /img/SliderMain-SRS2.jpg
+image: /img/ewb_logo.jpg
 title: 'EWB, Canada'
 date: 2016-12-17T15:04:10.000Z
 customer:
