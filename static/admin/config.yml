@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
+
 media_folder: static/img
 public_folder: /img
 
@@ -76,7 +78,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/about/team.md"
+      - file: "src/pages/team/team.md"
         label: "Team"
         name: "team"
         editor:
