@@ -71,11 +71,7 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Align Content"
-        name: "align"
-        widget: "select"
-        options: ["left", "right"]
-        required: true
+      - {label: "Align Content", name: "align", widget: "select", options: ["left", "right"], required: true}
 
   - name: "pages"
     label: "Pages"

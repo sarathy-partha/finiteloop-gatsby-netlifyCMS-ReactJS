@@ -83,14 +83,14 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-remove-serviceworker',
+    `gatsby-plugin-netlify`,
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    `gatsby-plugin-netlify`,
-    'gatsby-plugin-remove-serviceworker',
    // 'gatsby-plugin-offline', // Disabling this due to issues.
   ],
 };
