@@ -22,7 +22,7 @@ const TemplateWrapper = ({ children, data }) => {
       <Helmet title={settings.frontmatter.siteTitle} />
       <Hidden implementation="css">
         <Navbar title={settings.frontmatter.siteDescription} logo={settings.frontmatter.logo} />
-        <div style={{ marginTop: '70px'}}>
+        <div style={{ marginTop: '90px'}}>
           {children()}
         </div>
       </Hidden>

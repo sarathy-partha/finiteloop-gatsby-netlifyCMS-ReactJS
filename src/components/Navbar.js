@@ -23,7 +23,7 @@ const styles = theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    maxWidth: '100%'
+    maxWidth: '100%',
   },
   flex: {
     display: 'flex',
@@ -35,13 +35,12 @@ const styles = theme => ({
   logo: {
     /* Rectangle: */
     border: '2px solid #70A898',
-    /* FINITELOOP: */
-    fontSize: '20px',
     color: '#70A999',
     letterSpacing: '0.71px',
     textDecoration: 'none',
     padding: '5px 10px 5px 10px',
     textTransform: 'uppercase',
+    marginLeft: '20px'
   },
   button: {
     //display: 'flex',
@@ -101,10 +100,10 @@ class Navbar extends React.Component {
         <Fade in
           style={{ transformOrigin: '0 0 0' }}
           {...{ timeout: 1000 }}>
-          <AppBar position="fixed" color="default">
+          <AppBar style={{ boxShadow: 'none', backgroundColor: '#fafafa', paddingTop: '10px' }} position="fixed" color="default">
             <Toolbar>
               <Link to="/" className={classes.logo}>
-                <Typography color="inherit" component="span">
+                <Typography color="inherit" component="span" style={{ fontSize: '20px' }}>
                   {this.props.title}
                 </Typography>
               </Link>
@@ -139,6 +138,7 @@ class Navbar extends React.Component {
                 </Drawer>
               </Hidden>
             </Toolbar>
+            <Divider style={{ backgroundColor: '#70A999', marginLeft: '20px', marginRight: '20px', marginTop: '10px' }} />
           </AppBar>
         </Fade>
       </div >

@@ -10,16 +10,21 @@ import Teams from '../components/teams';
 import classNames from 'classnames';
 
 import './index.scss';
+import { Divider } from 'material-ui';
+import Offerrings from '../components/Offerings';
 
 const styles = theme => ({
   initial: {
     background: 'url(/img/headerBackground.svg) no-repeat top left',
-    paddingBottom: '100px'
+    paddingBottom: '50px'
   },
   header1: {
+    [theme.breakpoints.down('sm')]: {
+      padding: '150px 20px 100px 20px !important', // Overrides inline-style
+    },
     marginTop: '50px',
-    padding: '150px 50px 100px 50px',
-    fontSize: '5vmin',
+    padding: '150px 50px 100px 100px',
+    fontSize: '6vmin',
     color: '#70A999',
     letterSpacing: '1.29px',
     width: '100%',
@@ -48,19 +53,19 @@ const styles = theme => ({
     lineHeight: '1.25',
   },
   offeringsSection1: {
-    background: 'url(/img/offeringBackground.svg) no-repeat top left',
+    background: 'url(/img/kolamBackground.png) no-repeat top left',
     display: 'flex',
     flexWrap: 'wrap',
     paddingTop: '100px',
-    paddingBottom: '100px',
+    paddingBottom: '50px',
     flex: 1,
   },
   offeringsSection2: {
-    background: 'url(/img/offeringBackground.svg) no-repeat top right',
+    background: 'url(/img/kolamBackground.png) no-repeat top right',
     display: 'flex',
     flexWrap: 'wrap',
-    paddingTop: '100px',
-    paddingBottom: '100px',
+    paddingTop: '50px',
+    paddingBottom: '50px',
     flex: 1,
   },
   offeringLeft: {
@@ -81,7 +86,7 @@ const styles = theme => ({
     [theme.breakpoints.up('lg')]: {
       width: '75% !important', // Overrides inline-style
     },
-    paddingLeft: '50px',
+    paddingLeft: '20px',
     paddingRight: '20px',
   },
   offeringBody1: {
@@ -154,10 +159,10 @@ class IndexPage extends React.Component {
           <section className={classes.initial} name="initial">
             <Typography component="p" className={classes.header1}>
               We are a boutique consulting firm focusing on experience design and highly scalable technical architecture
-            </Typography>
+                    </Typography>
             <p className="line-1 anim-typewriter">
               WE HELP YOU SCALE...
-          </p>
+            </p>
           </section>
         </div>
         <div style={{ background: 'white' }}>
@@ -165,44 +170,12 @@ class IndexPage extends React.Component {
             <Typography component="span" className={classes.more}>
               More
               <br />
-              <i style={{ fontSize: '38px', lineHeight: 0.5 }} class="material-icons">keyboard_arrow_down</i>
+              <i style={{ fontSize: '38px', lineHeight: 0.5 }} className="material-icons">keyboard_arrow_down</i>
             </Typography>
           </section>
+          <Divider style={{ backgroundColor: '#70A999', marginLeft: '20px', marginRight: '20px' }} />
         </div>
-        <div style={{ backgroundColor: 'white' }}>
-          <section name="offerings" className={classes.offeringsSection1}>
-            <div className={classes.offeringLeft} >
-              <img src="/img/Sol_Architecture.png" />
-            </div>
-            <div className={classes.offeringRight}>
-              <Typography component="p" className={classes.title1}>
-                Solution Architecture
-              </Typography>
-              <Typography component="p" variant="body1" className={classes.offeringBody1}>
-                You need to implement a business critical product, with high process complexity and massive concurrent usage. We have done this many times before.
-              <br /><br />
-                Our team has worked on different products that have enrolled a billion users or, enabled millions of payment transactions or, helped a global automobile company create a custom ordering platform with millions of possible combinations. You bring the vision, we bring the scalability.
-              <br /><br />
-                Salesforce consulting: Architect and lead development for one of the most exciting apps of 2018 on AppExchange? Done. Implement it in a scenario which can handle hundreds of thousands of orders every minute? Done. Voluntarily create and implement our smallest salesforce project for a small orphanage in rural south India and see it being used to its fullest? Done with a lot of joy.
-            </Typography>
-            </div>
-          </section>
-          <section name="offerings" className={classes.offeringsSection2}>
-            <div className={classes.offeringRight} >
-              <Typography component="p" className={classes.title1}>
-                ORGANISATION TRANSFORMATION
-              </Typography>
-              <Typography component="p" variant="body1" className={classes.offeringBody1}>
-                The most important product that you work on is your organization. We feel our work on technology and designs extends into the systems and experiences inside an organisation.
-              <br /> <br />
-                We have worked with organizations to create systems and best practices that help when growth turns from sporadic to exponential. We have redesigned financial and communication team structures in an international non-profit with presence in 35 countries. We play the role of a CTO organisation for one of our clients. We are in the trenches with you.
-            </Typography>
-            </div>
-            <div className={classes.offeringLeft}>
-              <img src="/img/OrgTrans.png" />
-            </div>
-          </section>
-        </div>
+        <Offerrings offeringsData={this.props} />
         <Teams teamsData={this.props} />
       </div >
     )
@@ -217,19 +190,19 @@ export default withStyles(styles)(IndexPage);
 
 export const teamsPageQuery = graphql`
   query Teams {
-          allMarkdownRemark(filter: {frontmatter: {path: {eq: "/team"}}}) {
-          edges {
-          node {
-            html
-              id
+    Teams: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "teams-page"}}}) {
+      edges {
+        node {
+          html
+          id
           frontmatter {
             path
-              title
-          image
-          teamTitle
-          teamDescription
-              team {
-            person {
+            title
+            image
+            teamTitle
+            teamDescription
+            team {
+              person {
                 name
                 title
                 avatar
@@ -239,11 +212,40 @@ export const teamsPageQuery = graphql`
                 twtrsiteurl
                 lnkdnsiteurl
                 githubsiteurl
-                }
               }
             }
           }
         }
-    } 
-}
+      }
+    }
+    Offerings: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "offering"}}}) {
+      edges {
+        node {
+          excerpt(pruneLength: 400)
+          id
+          frontmatter {
+            path
+            title
+            image
+            templateKey
+            align
+          }
+        }
+      }
+    }
+    Casestudies: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "case-study"}}}) {
+      edges {
+        node {
+          html
+          id
+          frontmatter {
+            path
+            title
+            image
+            templateKey
+          }
+        }
+      }
+    }
+  }
 `

@@ -1,5 +1,5 @@
 import React from 'react'
-import Card, { CardContent, CardMedia, CardActions } from 'material-ui/Card';
+import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
@@ -16,26 +16,29 @@ import Avatar from 'material-ui/Avatar';
 import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
 import Fade from 'material-ui/transitions/Fade';
 
-import Content, { HTMLContent } from '../components/Content'
-
-export const TeamsPageTemplate = ({ props, title, content, contentComponent, teams, teamTitle, teamDescription, timer }) => {
-    const PageContent = contentComponent || Content
+export const TeamsPageTemplate = ({ props, teams }) => {
     const { classes, theme } = props;
     return (
         <section>
-            <h2 className={classes.teamsTitle}>{teamTitle}</h2>
+            <h2 className={classes.teamsTitle}>{teams.teamTitle}</h2>
             <Grid container spacing={0} className={classes.teams}>
-                {teams
+                {teams.team
                     .map(({ person }) => {
                         return (
                             <div key={person.name} >
                                 <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
                                     <Card className={classes.card}>
-                                        <Avatar style={{ height: 150, width: 150, border: '5px solid #70A898', }}
-                                            alt={person.name}
-                                            src={person.avatar}
-                                            className={classNames(classes.avatar, classes.bigAvatar)}
-                                        />
+                                        <div>
+                                            <Avatar style={{ height: 150, width: 150, border: '5px solid #70A898', }}
+                                                alt={person.name}
+                                                src={person.avatar}
+                                                className={classNames(classes.avatar, classes.bigAvatar)}
+                                            />
+                                            <IconButton style={{ position: 'relative', marginTop: '-70px', marginLeft: '135px' }}
+                                                href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
+                                                <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                                            </IconButton>
+                                        </div>
                                         <CardContent className={classes.content}>
                                             <Typography variant="body1" className={classes.offeringBody1} component="h1">
                                                 {person.name}
@@ -46,11 +49,6 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
                                                 {person.quote}
                                             </Typography>
                                         </CardContent>
-                                        <CardActions>
-                                            <IconButton href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
-                                                <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                                            </IconButton>
-                                        </CardActions>
                                     </Card>
                                 </Grid>
                             </div>
@@ -65,22 +63,14 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
 
 const Teams = ({ teamsData }) => {
     const { classes, theme } = teamsData;
-    const { edges: aboutus } = teamsData.data.allMarkdownRemark
+    const { edges: aboutus } = teamsData.data.Teams
     return (
         <div>
             {aboutus
-                .map(({ node: aboutusData }) => (
-                    <TeamsPageTemplate key={aboutusData.frontmatter.title}
-                        contentComponent={HTMLContent}
-                        title={aboutusData.frontmatter.title}
-                        content={aboutusData.html}
-                        teamTitle={aboutusData.frontmatter.teamTitle}
-                        teamDescription={aboutusData.frontmatter.teamDescription}
-                        teams={aboutusData.frontmatter.team}
+                .map(({ node: team }) => (
+                    <TeamsPageTemplate key={team.frontmatter.title}
                         props={teamsData}
-                        timer={1000}
-                        content={aboutusData.html}
-                        contentComponent={HTMLContent}
+                        teams={team.frontmatter}
                     />
                 ))
             }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Card, { CardContent, CardMedia, CardActions } from 'material-ui/Card';
+import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
@@ -27,7 +27,7 @@ const styles = theme => ({
     display: 'flex',
     // marginTop: '5px',
     flex: 1,
-    maxWidth: '550px',
+    maxWidth: '450px',
     alignItems: 'center',
     flexDirection: 'column',
     minHeight: '100%',
@@ -151,6 +151,10 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
                         src={person.avatar}
                         className={classNames(classes.avatar, classes.bigAvatar)}
                       />
+                      <IconButton style={{ position: 'relative', marginTop: '-60px', marginLeft: '130px' }}
+                        href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
+                        <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
+                      </IconButton>
                       <CardContent className={classes.content}>
                         <Typography variant="display1" component="h1">
                           {person.name}
@@ -162,11 +166,6 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
                           {person.quote}
                         </Typography>
                       </CardContent>
-                      <CardActions>
-                        <IconButton href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
-                          <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                        </IconButton>
-                      </CardActions>
                     </Card>
                   </Grid>
                 </Fade>

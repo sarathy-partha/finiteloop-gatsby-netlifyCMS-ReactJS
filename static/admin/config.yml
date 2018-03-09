@@ -60,7 +60,7 @@ collections:
           - {label: "Technology", name: technology, widget: markdown, default: "technology"}
 
   - name: "offerings"
-    label: "Offerings"
+    label: "Offering"
     folder: "src/pages/offerings"
     create: true
     editor:
@@ -71,15 +71,20 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Align Content"
+        name: "align"
+        widget: "select"
+        options: ["left", "right"]
+        required: true
 
   - name: "pages"
     label: "Pages"
-    editor:
-      preview: false
     files:
       - file: "src/pages/about/team.md"
         label: "Team"
         name: "team"
+        editor:
+          preview: false
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "teams-page"}
           - {label: "Path", name: "path", widget: "hidden", default: "/teams"}
