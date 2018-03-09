@@ -129,7 +129,7 @@ team:
       title: Architect – Service Design
       twtrsiteurl: test
   - person:
-      avatar: /img/team/Sharad.jpg
+      avatar: /img/team/Pavithra.jpg
       fbsiteurl: test
       githubsiteurl: test
       lnkdnsiteurl: test

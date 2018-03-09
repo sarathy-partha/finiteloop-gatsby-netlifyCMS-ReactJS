@@ -88,7 +88,7 @@ const styles = theme => ({
     fontSize: '1.25rem',
     color: '#70A999',
     letterSpacing: '0.71px',
-    fontWeight: 600,
+    fontWeight: 500,
     display: 'flex'
   },
 

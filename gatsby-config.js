@@ -90,6 +90,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
+   // 'gatsby-plugin-offline', // Disabling this due to issues.
   ],
 };
