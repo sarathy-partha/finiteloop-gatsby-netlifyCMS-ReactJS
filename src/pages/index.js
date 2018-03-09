@@ -7,6 +7,9 @@ import { withStyles } from 'material-ui/styles';
 import ServicesCarousel from '../components/ServicesCarousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Teams from '../components/teams';
+import classNames from 'classnames';
+
+import './index.scss';
 
 const styles = theme => ({
   initial: {
@@ -27,7 +30,7 @@ const styles = theme => ({
     fontSize: '5vmin',
     color: '#5C5C5C',
     letterSpacing: '1.29px',
-    width: '100%',
+    width: '24em',
     textAlign: 'center',
   },
   title1: {
@@ -88,7 +91,7 @@ const styles = theme => ({
     fontWeight: 600,
     display: 'flex'
   },
-  
+
   // Teams Section styles
 
   teams: {
@@ -152,9 +155,9 @@ class IndexPage extends React.Component {
             <Typography component="p" className={classes.header1}>
               We are a boutique consulting firm focusing on experience design and highly scalable technical architecture
             </Typography>
-            <Typography component="p" className={classes.header2}>
-              WE HELP YOU SCALE.
-          </Typography>
+            <p className="line-1 anim-typewriter">
+              WE HELP YOU SCALE...
+          </p>
           </section>
         </div>
         <div style={{ background: 'white' }}>
