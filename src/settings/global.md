@@ -1,8 +1,8 @@
 ---
 templateKey: global-settings
-siteTitle: finiteloop Consulting & Solutions - finite minds, infinite ideas, right solution
+siteTitle: Finiteloop Systems - We help you scale.
 siteUrl: 'https://finiteloop.io'
-siteDescription: 'finiteloop'
+siteDescription: finiteloop
 logo: /img/flLogo.png
 socialMediaCard:
   twitterCreatorAccount: '@partha360'
