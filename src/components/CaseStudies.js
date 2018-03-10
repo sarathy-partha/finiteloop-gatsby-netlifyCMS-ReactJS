@@ -74,15 +74,17 @@ const CaseStudies = ({ caseStudiesData }) => {
                             />
                         ))
                     }
-                    <Button variant="flat" color="inherit"
+                </Grid>
+                <div style={{textAlign: 'center'}}>
+                <Button variant="flat" color="inherit"
                         to="/case-studies"
                         component={Link}
                         style={{ color: '#70A999' }}
                         className={classes.button}>
                         See All Case Studies
                         <i className="material-icons">keyboard_arrow_right</i>
-                    </Button>
-                </Grid>
+                </Button>
+                </div>
             </div>
         </div>
     )
