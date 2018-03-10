@@ -4,15 +4,13 @@ path: /best-med
 title: Bestmed
 image: /img/applicationLogo.jpg.png
 date: 2016-03-03T00:00:00+05:30
+homepage: true
 customer:
   name: Ashoka
   profile: >-
-    Ashoka is the one of the largest networks of social entrepreneurs worldwide,
-    with over 3,000 Ashoka Fellows in 70 countries creating large-scale impact
-    through new innovations.  Ashoka pioneered the field of social
-    entrepreneurship and has built multi-level stakeholders across the world who
-    increasingly look to entrepreneurial talent and new ideas to solve social
-    problems
+    Best Price Pharmacy Group is a wholly owned Australian company working in the domain of pharmacy distribution. Best Price Pharmacy Group has pharmacies strategically located throughout New South Wales providing Medication Management solutions to Residential Aged Care Facilities from the Hunter Region in the North to the Illawarra Region in the South, and West to the Blue Mountains.
+
+    Best Price Pharmacy specialises in Aged Care and understands the challenges faced by Residential Aged Care Facilities.
   web: 'http://www.ashoka.org/'
 casestudy:
   benefits: |-
@@ -46,6 +44,6 @@ casestudy:
     * Salesforce
     * Static code analyzers
 ---
-Ashoka is migrating the recruiting functionality to Financial Force HCM application (FFHCM). The candidate search tool provided by FFHCM has few limitations. There is an existing custom search tool  by a third party which need to be optimised for performance and code quality.
+Best Price Pharmacy Group is a wholly owned Australian company working in the domain of pharmacy distribution. Best Price Pharmacy Group has pharmacies strategically located throughout New South Wales providing Medication Management solutions to Residential Aged Care Facilities from the Hunter Region in the North to the Illawarra Region in the South, and West to the Blue Mountains.
 
-Ashoka’s instance has a medium size code base and data, with about 500 users.  finiteloop performed technical review, static code analysis, and implemented a new design and code.
+Best Price Pharmacy specialises in Aged Care and understands the challenges faced by Residential Aged Care Facilities.

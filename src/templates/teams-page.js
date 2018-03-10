@@ -1,27 +1,22 @@
 import React from 'react'
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
 import propTypes from 'prop-types';
-import classNames from 'classnames';
-import { IconButton } from 'material-ui';
-import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
-import PlayArrowIcon from 'material-ui-icons/PlayArrow';
-import SkipNextIcon from 'material-ui-icons/SkipNext';
-import Divider from 'material-ui/Divider';
-import Avatar from 'material-ui/Avatar';
-
-import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
-import Fade from 'material-ui/transitions/Fade';
 
 import Content, { HTMLContent } from '../components/Content'
+import Teams from '../components/teams';
 
 const styles = theme => ({
+  // Teams Section styles
+
   teams: {
     display: 'flex',
     alignItems: 'stretch',
     justifyContent: 'center',
+  },
+  teamsTitle: {
+    textAlign: 'center',
+    color: '#70A999',
+    fontSize: '36px',
   },
   card: {
     display: 'flex',
@@ -33,7 +28,7 @@ const styles = theme => ({
     minHeight: '100%',
     border: 0,
     boxShadow: 'none',
-    borderRadius: '10%'
+    backgroundColor: 'transparent',
   },
   content: {
     display: 'flex',
@@ -130,58 +125,14 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
   const { classes, theme } = props;
   return (
     <section>
-      <h2>{teamTitle}</h2>
-      <Divider />
-      <Typography variant="headline" gutterBottom component="p">
-        <PageContent content={content} />
-      </Typography>
-      <Grid container spacing={0} className={classes.teams}>
-        {teams
-          .map(({ person }) => {
-            timer += 500;
-            return (
-              <div key={person.name} >
-                <Fade in
-                  style={{ transformOrigin: '0 0 0' }}
-                  {...{ timeout: timer }}>
-                  <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
-                    <Card className={classes.card}>
-                      <Avatar style={{ height: 150, width: 150, border: '5px solid #70A898', }}
-                        alt={person.name}
-                        src={person.avatar}
-                        className={classNames(classes.avatar, classes.bigAvatar)}
-                      />
-                      <IconButton style={{ position: 'relative', marginTop: '-60px', marginLeft: '130px' }}
-                        href={person.lnkdnsiteurl} target="_new" aria-label="Play/pause">
-                        <LnkdnIcon className={classes.icons} style={{ height: '48px', width: '48px' }} />
-                      </IconButton>
-                      <CardContent className={classes.content}>
-                        <Typography variant="display1" component="h1">
-                          {person.name}
-                        </Typography>
-                        <Typography variant="title" component="h2">
-                          {person.title}
-                        </Typography>
-                        <Typography style={{ textAlign: 'center' }} variant="subheading" component="p">
-                          {person.quote}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Fade>
-              </div>
-            )
-          })}
-      </Grid>
-      <div>
-      </div>
+      <Teams teamsData={props} />
     </section>
   )
 }
 
 const TeamsPageTemplateWrapper = (props) => {
   const { classes, theme } = props;
-  const { edges: aboutus } = props.data.allMarkdownRemark
+  const { edges: aboutus } = props.data.Teams
   return (
     <div>
       {aboutus
@@ -213,20 +164,20 @@ export default withStyles(styles, { withTheme: true })(TeamsPageTemplateWrapper)
 
 
 export const teamsPageQuery = graphql`
-  query TeamsPage($path: String!) {
-          allMarkdownRemark(filter: {frontmatter: {path: {eq: $path}}}) {
-          edges {
-          node {
-            html
-              id
+  query TeamsPage {
+    Teams: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "teams-page"}}}) {
+      edges {
+        node {
+          html
+          id
           frontmatter {
             path
-              title
-          image
-          teamTitle
-          teamDescription
-              team {
-            person {
+            title
+            image
+            teamTitle
+            teamDescription
+            team {
+              person {
                 name
                 title
                 avatar
@@ -236,11 +187,11 @@ export const teamsPageQuery = graphql`
                 twtrsiteurl
                 lnkdnsiteurl
                 githubsiteurl
-                }
               }
             }
           }
         }
-    } 
+      }
+    }
 }
 `

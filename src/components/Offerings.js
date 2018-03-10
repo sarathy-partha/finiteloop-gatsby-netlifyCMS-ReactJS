@@ -1,35 +1,21 @@
 import React from 'react'
-import Card, { CardContent, CardMedia, CardActions } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import propTypes from 'prop-types';
-import classNames from 'classnames';
-import { IconButton } from 'material-ui';
-import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
-import PlayArrowIcon from 'material-ui-icons/PlayArrow';
-import SkipNextIcon from 'material-ui-icons/SkipNext';
-import Divider from 'material-ui/Divider';
-import Avatar from 'material-ui/Avatar';
 import Button from 'material-ui/Button';
 
 import Link from 'gatsby-link'
 
-import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
-import Fade from 'material-ui/transitions/Fade';
-
-import Content, { HTMLContent } from '../components/Content'
-
 export const OfferingsPageTemplate = ({ props, offering }) => {
-    const PageContent = Content;
     const { classes, theme } = props;
 
     const isAlignLeft = offering.frontmatter.align === "left";
     return (
         <section>
-            <div style={{ backgroundColor: 'white' }}>
+            <div style={{background: 'white'}}>
                 {isAlignLeft && (
-                    <section name="offerings" className={classes.offeringsSection1}>
+                    <section name="offerings" className={classes.offeringsSectionLeft}>
                         <div className={classes.offeringLeft} >
                             <img src={offering.frontmatter.image} />
                         </div>
@@ -40,18 +26,19 @@ export const OfferingsPageTemplate = ({ props, offering }) => {
                             <Typography component="p" variant="body1" className={classes.offeringBody1}>
                                 {offering.excerpt}
                             </Typography>
-                            <Button variant="raised" color="primary" 
-                            to={offering.frontmatter.path} 
-                            component={Link}
-                            style= {{float: 'right'}}
-                            className={classes.button}>
+                            <Button variant="flat" color="primary"
+                                to={offering.frontmatter.path}
+                                component={Link}
+                                style={{ float: 'right' }}
+                                className={classes.button}>
                                 MORE
+                                <i className="material-icons">keyboard_arrow_right</i>
                             </Button>
                         </div>
                     </section>
                 )}
                 {!isAlignLeft && (
-                    <section name="offerings" className={classes.offeringsSection2}>
+                    <section name="offerings" className={classes.offeringsSectionRight}>
                         <div className={classes.offeringRight} >
                             <Typography component="p" className={classes.title1}>
                                 {offering.frontmatter.title}
@@ -59,12 +46,13 @@ export const OfferingsPageTemplate = ({ props, offering }) => {
                             <Typography component="p" variant="body1" className={classes.offeringBody1}>
                                 {offering.excerpt}
                             </Typography>
-                            <Button variant="raised" color="primary" 
-                            to={offering.frontmatter.path} 
-                            component={Link} 
-                            style= {{float: 'right'}}
-                            className={classes.button}>
+                            <Button variant="flat" color="primary"
+                                to={offering.frontmatter.path}
+                                component={Link}
+                                style={{ float: 'right' }}
+                                className={classes.button}>
                                 MORE
+                                <i className="material-icons">keyboard_arrow_right</i>
                             </Button>
                         </div>
                         <div className={classes.offeringLeft}>
@@ -83,15 +71,29 @@ const Offerrings = ({ offeringsData }) => {
     return (
         <div>
             {offerings
-                .map(({ node: offerings }) => (
-                    <OfferingsPageTemplate key={offerings.frontmatter.title}
+                .sort(compare)
+                .map(({ node }) => (
+                    <OfferingsPageTemplate key={node.frontmatter.title}
                         props={offeringsData}
-                        offering={offerings}
+                        offering={node}
                     />
                 ))
             }
         </div>
     )
+}
+
+function compare(a, b) {
+    const genreA = a.node.frontmatter.order;
+    const genreB = b.node.frontmatter.order;
+
+    let comparison = 0;
+    if (genreA > genreB) {
+        comparison = 1;
+    } else if (genreA < genreB) {
+        comparison = -1;
+    }
+    return comparison;
 }
 
 export default Offerrings;

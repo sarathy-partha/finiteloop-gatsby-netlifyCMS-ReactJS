@@ -12,6 +12,7 @@ import classNames from 'classnames';
 import './index.scss';
 import { Divider } from 'material-ui';
 import Offerrings from '../components/Offerings';
+import CaseStudies from '../components/CaseStudies';
 
 const styles = theme => ({
   initial: {
@@ -52,42 +53,44 @@ const styles = theme => ({
     fontSize: '18px',
     lineHeight: '1.25',
   },
-  offeringsSection1: {
+
+  // Offerrings Section
+
+  offeringsSectionLeft: {
     background: 'url(/img/kolamBackground.png) no-repeat top left',
     display: 'flex',
-    flexWrap: 'wrap',
-    paddingTop: '100px',
-    paddingBottom: '50px',
-    flex: 1,
-  },
-  offeringsSection2: {
-    background: 'url(/img/kolamBackground.png) no-repeat top right',
-    display: 'flex',
-    flexWrap: 'wrap',
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'nowrap',
+    },
     paddingTop: '50px',
     paddingBottom: '50px',
-    flex: 1,
+  },
+  offeringsSectionRight: {
+    background: 'url(/img/kolamBackground.png) no-repeat top right',
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'nowrap',
+    },
+    paddingTop: '50px',
+    paddingBottom: '50px',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   offeringLeft: {
-    paddingLeft: '50px',
     flex: 1,
+    display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
     [theme.breakpoints.down('sm')]: {
       display: 'none', // Overrides inline-style
     },
+    marginLeft: '3%',
+    marginRight: '3%',
   },
   offeringRight: {
-    [theme.breakpoints.down('sm')]: {
-      width: '100% !important', // Overrides inline-style
-    },
-    [theme.breakpoints.up('md')]: {
-      width: '60% !important', // Overrides inline-style
-    },
-    [theme.breakpoints.up('lg')]: {
-      width: '75% !important', // Overrides inline-style
-    },
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    width: '100%',
+    marginLeft: '50px',
+    marginRight: '50px',
   },
   offeringBody1: {
     fontSize: '1.25rem',
@@ -147,6 +150,31 @@ const styles = theme => ({
   icons: {
     paddingLeft: '5px',
   },
+
+  // Case Studies section
+    caseStudycard: {
+      display: 'flex',
+      // marginTop: '5px',
+      flex: 1,
+      maxWidth: '450px',
+      alignItems: 'center',
+      flexDirection: 'column',
+      minHeight: '100%',
+      border: '2px solid #70A999',
+      boxShadow: 'none',
+      backgroundColor: 'transparent',
+    },
+    caseStudymedia: {
+      height: 350,
+      width: 300,
+    },
+    caseStudycontent: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+      backgroundColor: '#70A999',
+    },
 })
 
 class IndexPage extends React.Component {
@@ -173,10 +201,10 @@ class IndexPage extends React.Component {
               <i style={{ fontSize: '38px', lineHeight: 0.5 }} className="material-icons">keyboard_arrow_down</i>
             </Typography>
           </section>
-          <Divider style={{ backgroundColor: '#70A999', marginLeft: '20px', marginRight: '20px' }} />
         </div>
         <Offerrings offeringsData={this.props} />
         <Teams teamsData={this.props} />
+        <CaseStudies caseStudiesData={this.props} />
       </div >
     )
   }
@@ -224,6 +252,7 @@ export const teamsPageQuery = graphql`
           excerpt(pruneLength: 400)
           id
           frontmatter {
+            order
             path
             title
             image
@@ -236,13 +265,14 @@ export const teamsPageQuery = graphql`
     Casestudies: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "case-study"}}}) {
       edges {
         node {
-          html
+          excerpt(pruneLength: 200)
           id
           frontmatter {
             path
             title
             image
             templateKey
+            homepage
           }
         }
       }

@@ -4,6 +4,7 @@ path: /ewb-canada
 image: /img/ewb_logo.jpg
 title: 'EWB, Canada'
 date: 2016-12-17T15:04:10.000Z
+homepage: false
 customer:
   name: EWB, Canada
   profile: Engineers Without Borders, Canada is a social change incubator for people, ventures and ideas. EWB spark and accelerate systemic innovations in Canada and Africa that have the potential to radically disrupt the systems that allow poverty to persist.

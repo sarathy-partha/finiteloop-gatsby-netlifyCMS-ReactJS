@@ -4,6 +4,7 @@ path: /head-held-high
 title: Head Held High
 image: img/headheldhigh.jpg
 date: 2014-06-03T00:00:00+05:30
+homepage: false
 customer:
   name: Trees.org
   profile: >-

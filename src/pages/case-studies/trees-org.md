@@ -4,6 +4,7 @@ path: /trees-org
 title: Trees.org
 image: img/treesFTF-LOGO-1500x676.jpg
 date: 2014-06-03T00:00:00+05:30
+homepage: true
 customer:
   name: Trees.org
   profile: >-

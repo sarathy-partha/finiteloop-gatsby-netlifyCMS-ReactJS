@@ -1,28 +1,36 @@
 import React from 'react'
+
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
-import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
-import propTypes from 'prop-types';
 import classNames from 'classnames';
 import { IconButton } from 'material-ui';
-import SkipPreviousIcon from 'material-ui-icons/SkipPrevious';
-import PlayArrowIcon from 'material-ui-icons/PlayArrow';
-import SkipNextIcon from 'material-ui-icons/SkipNext';
-import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
 
+import { LnkdnIcon } from '../components/icons/icons'
 
-import { FbIcon, LnkdnIcon, TwtrIcon, GitHubIcon } from '../components/icons/icons'
-import Fade from 'material-ui/transitions/Fade';
+function compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const genreA = a.person.name.toUpperCase();
+    const genreB = b.person.name.toUpperCase();
+
+    let comparison = 0;
+    if (genreA > genreB) {
+        comparison = 1;
+    } else if (genreA < genreB) {
+        comparison = -1;
+    }
+    return comparison;
+}
 
 export const TeamsPageTemplate = ({ props, teams }) => {
     const { classes, theme } = props;
     return (
-        <section>
+        <div style={{ background: 'linear-gradient(-180deg, #FAFAFA 0%, #F1F1F1 100%)' }}>
             <h2 className={classes.teamsTitle}>{teams.teamTitle}</h2>
             <Grid container spacing={0} className={classes.teams}>
                 {teams.team
+                    .sort(compare)
                     .map(({ person }) => {
                         return (
                             <div key={person.name} >
@@ -57,7 +65,7 @@ export const TeamsPageTemplate = ({ props, teams }) => {
             </Grid>
             <div>
             </div>
-        </section>
+        </div>
     )
 }
 
