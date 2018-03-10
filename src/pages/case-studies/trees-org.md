@@ -2,9 +2,8 @@
 templateKey: case-study
 path: /trees-org
 title: Trees.org
-image: img/treesFTF-LOGO-1500x676.jpg
-date: 2014-06-03T00:00:00+05:30
-homepage: true
+date: 2014-06-02T18:30:00.000Z
+homepage: true333333333
 customer:
   name: Trees.org
   profile: >-
