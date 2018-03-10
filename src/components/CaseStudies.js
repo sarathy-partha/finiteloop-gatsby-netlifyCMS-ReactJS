@@ -3,9 +3,6 @@ import React from 'react'
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
-import classNames from 'classnames';
-import { IconButton } from 'material-ui';
-import Avatar from 'material-ui/Avatar';
 import Button from 'material-ui/Button';
 
 import Link from 'gatsby-link'
