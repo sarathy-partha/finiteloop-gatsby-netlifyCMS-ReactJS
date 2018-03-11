@@ -32,41 +32,41 @@ collections:
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
               - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
 
-   - name: "links"
-     label: "Links"
-     create: true
-     editor:
-      preview: false
-     files:
-      - file: "src/settings/links.md"
-        label: "Links"
-        name: "navlinks"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "nav-links"}
-          - label: "Header Links"
-            name: "headerlinks"
-            widget: "list"  
-            fields:
-              - label: Items
-                name: item
-                widget: object
-                fields:
-                  - {label: "Title", name: title, widget: text}
-                  - {label: "URL", name: url, widget: text, default: "/"}
-                  - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
-                  - {label: "Glyph Icon", name: icon, widget: "text"}
-          - label: "Footer Links"
-            name: "footerlinks"
-            widget: "list"
-            fields:
-              - label: Items
-                name: item
-                widget: object
-                fields:
-                  - {label: "Title", name: title, widget: text}
-                  - {label: "URL", name: url, widget: text, default: "/"}
-                  - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
-                  - {label: "Glyph Icon", name: icon, widget: "text"}
+  - name: "links"
+    label: "Links"
+    create: true
+    editor:
+    preview: false
+    files:
+    - file: "src/settings/links.md"
+      label: "Links"
+      name: "navlinks"
+      fields:
+        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "nav-links"}
+        - label: "Header Links"
+          name: "headerlinks"
+          widget: "list"  
+          fields:
+            - label: Items
+              name: item
+              widget: object
+              fields:
+                - {label: "Title", name: title, widget: text}
+                - {label: "URL", name: url, widget: text, default: "/"}
+                - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
+                - {label: "Glyph Icon", name: icon, widget: "text"}
+        - label: "Footer Links"
+          name: "footerlinks"
+          widget: "list"
+          fields:
+            - label: Items
+              name: item
+              widget: object
+              fields:
+                - {label: "Title", name: title, widget: text}
+                - {label: "URL", name: url, widget: text, default: "/"}
+                - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
+                - {label: "Glyph Icon", name: icon, widget: "text"}
 
   - name: "casestudy"
     label: "Case Study"
