@@ -10,4 +10,3 @@ socialMediaCard:
   twitterSiteAccount: '@_finiteloop'
 headerScripts: <!-- Add your analytics scripts / verification meta here -->
 ---
-
