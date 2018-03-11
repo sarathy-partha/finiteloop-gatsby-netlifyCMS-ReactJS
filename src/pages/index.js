@@ -13,6 +13,7 @@ import './index.scss';
 import { Divider } from 'material-ui';
 import Offerrings from '../components/Offerings';
 import CaseStudies from '../components/CaseStudies';
+import SEO from '../components/seo';
 
 const styles = theme => ({
   initial: {
@@ -89,8 +90,8 @@ const styles = theme => ({
   },
   offeringRight: {
     width: '100%',
-    marginLeft: '50px',
-    marginRight: '50px',
+    marginLeft: '3%',
+    marginRight: '3%',
   },
   offeringBody1: {
     fontSize: '1.25rem',
@@ -163,6 +164,8 @@ const styles = theme => ({
       border: '2px solid #70A999',
       boxShadow: 'none',
       backgroundColor: 'transparent',
+      marginLeft: '3%',
+      marginRightL: '3%',
     },
     caseStudymedia: {
       height: 350,
@@ -205,6 +208,7 @@ class IndexPage extends React.Component {
         <Offerrings offeringsData={this.props} />
         <Teams teamsData={this.props} />
         <CaseStudies caseStudiesData={this.props} />
+        <SEO postEdges={this.props} />
       </div >
     )
   }

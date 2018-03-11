@@ -24,7 +24,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
       return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         const pagePath = node.frontmatter.path
-        if (node.frontmatter.templateKey != 'global-settings') {
+        if (node.frontmatter.templateKey != 'global-settings' && node.frontmatter.templateKey != 'nav-links') {
           createPage({
             path: pagePath,
             component: path.resolve(

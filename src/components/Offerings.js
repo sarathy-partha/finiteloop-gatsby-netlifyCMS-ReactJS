@@ -12,56 +12,54 @@ export const OfferingsPageTemplate = ({ props, offering }) => {
 
     const isAlignLeft = offering.frontmatter.align === "left";
     return (
-        <section>
-            <div style={{background: 'white'}}>
-                {isAlignLeft && (
-                    <section name="offerings" className={classes.offeringsSectionLeft}>
-                        <div className={classes.offeringLeft} >
-                            <img src={offering.frontmatter.image} />
-                        </div>
-                        <div className={classes.offeringRight}>
-                            <Typography component="p" className={classes.title1}>
-                                {offering.frontmatter.title}
-                            </Typography>
-                            <Typography component="p" variant="body1" className={classes.offeringBody1}>
-                                {offering.excerpt}
-                            </Typography>
-                            <Button variant="flat" color="primary"
-                                to={offering.frontmatter.path}
-                                component={Link}
-                                style={{ float: 'right' }}
-                                className={classes.button}>
-                                MORE
+        <div style={{ background: 'white' }}>
+            {isAlignLeft && (
+                <div name="offering" className={classes.offeringsSectionLeft}>
+                    <div className={classes.offeringLeft} >
+                        <img src={offering.frontmatter.image} />
+                    </div>
+                    <div className={classes.offeringRight}>
+                        <Typography component="h2" className={classes.title1}>
+                            {offering.frontmatter.title}
+                        </Typography>
+                        <Typography component="p" variant="body1" className={classes.offeringBody1}>
+                            {offering.excerpt}
+                        </Typography>
+                        <Button variant="flat" color="primary"
+                            to={offering.frontmatter.path}
+                            component={Link}
+                            style={{ float: 'right' }}
+                            className={classes.button}>
+                            MORE
                                 <i className="material-icons">keyboard_arrow_right</i>
-                            </Button>
-                        </div>
-                    </section>
-                )}
-                {!isAlignLeft && (
-                    <section name="offerings" className={classes.offeringsSectionRight}>
-                        <div className={classes.offeringRight} >
-                            <Typography component="p" className={classes.title1}>
-                                {offering.frontmatter.title}
-                            </Typography>
-                            <Typography component="p" variant="body1" className={classes.offeringBody1}>
-                                {offering.excerpt}
-                            </Typography>
-                            <Button variant="flat" color="primary"
-                                to={offering.frontmatter.path}
-                                component={Link}
-                                style={{ float: 'right' }}
-                                className={classes.button}>
-                                MORE
+                        </Button>
+                    </div>
+                </div>
+            )}
+            {!isAlignLeft && (
+                <div name="offering" className={classes.offeringsSectionRight}>
+                    <div className={classes.offeringRight} >
+                        <Typography component="h2" className={classes.title1}>
+                            {offering.frontmatter.title}
+                        </Typography>
+                        <Typography component="p" variant="body1" className={classes.offeringBody1}>
+                            {offering.excerpt}
+                        </Typography>
+                        <Button variant="flat" color="primary"
+                            to={offering.frontmatter.path}
+                            component={Link}
+                            style={{ float: 'right' }}
+                            className={classes.button}>
+                            MORE
                                 <i className="material-icons">keyboard_arrow_right</i>
-                            </Button>
-                        </div>
-                        <div className={classes.offeringLeft}>
-                            <img src={offering.frontmatter.image} />
-                        </div>
-                    </section>
-                )}
-            </div>
-        </section>
+                        </Button>
+                    </div>
+                    <div className={classes.offeringLeft}>
+                        <img src={offering.frontmatter.image} />
+                    </div>
+                </div>
+            )}
+        </div>
     )
 }
 
@@ -69,7 +67,7 @@ const Offerrings = ({ offeringsData }) => {
     const { classes, theme } = offeringsData;
     const { edges: offerings } = offeringsData.data.Offerings
     return (
-        <div>
+        <section name="offerings" >
             {offerings
                 .sort(compare)
                 .map(({ node }) => (
@@ -79,7 +77,7 @@ const Offerrings = ({ offeringsData }) => {
                     />
                 ))
             }
-        </div>
+        </section>
     )
 }
 

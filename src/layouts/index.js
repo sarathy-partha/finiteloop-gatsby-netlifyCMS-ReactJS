@@ -16,12 +16,13 @@ import BottomBar from '../components/BottomBar';
 import FooterNew from '../components/footerNew';
 
 const TemplateWrapper = ({ children, data }) => {
-  const { markdownRemark: settings } = data
+  console.log(data);
+  const { global: settings } = data
   return (
     <div>
       <Helmet title={settings.frontmatter.siteTitle} />
       <Hidden implementation="css">
-        <Navbar title={settings.frontmatter.siteDescription} logo={settings.frontmatter.logo} />
+        <Navbar title={settings.frontmatter.logoTitle} logo={settings.frontmatter.logo} />
         <div style={{ marginTop: '90px'}}>
           {children()}
         </div>
@@ -47,7 +48,17 @@ export default (withWidth(), withRoot(TemplateWrapper))
 
 export const query = graphql`
   query SettingsQuery {
-    markdownRemark(frontmatter: {templateKey: {eq: "global-settings"}}) {
+    global: markdownRemark(frontmatter: {templateKey: {eq: "global-settings"}}) {
+      frontmatter {
+        logo
+        logoTitle
+        templateKey
+        siteUrl
+        siteTitle
+        siteDescription
+      }
+    }
+    links: markdownRemark(frontmatter: {templateKey: {eq: "nav-links"}}) {
       frontmatter {
         logo
         templateKey
