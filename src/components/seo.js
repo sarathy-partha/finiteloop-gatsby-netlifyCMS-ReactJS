@@ -29,11 +29,11 @@ class SEO extends Component {
                 "@type": "WebSite",
                 url: blogURL,
                 name: title,
-                alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+                alternateName: title ? config.siteTitleAlt : "",
             }
         ];
         if (postSEO) {
-            schemaOrgJSONLD.push([
+            schemaOrgJSONLD.push(
                 {
                     "@context": "http://schema.org",
                     "@type": "BreadcrumbList",
@@ -51,18 +51,37 @@ class SEO extends Component {
                 },
                 {
                     "@context": "http://schema.org",
-                    "@type": "BlogPosting",
-                    url: blogURL,
+                    "@type": "Article",
+                    url: postURL,
                     name: title,
-                    alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+                    alternateName: title ? config.siteTitleAlt : "",
                     headline: title,
                     image: {
                         "@type": "ImageObject",
                         url: image
                     },
-                    description
+                    description,
+                    author: {
+                        "@type": "Organization",
+                        name: config.siteTitleAlt
+                    },
+                    datePublished: new Date(),
+                    publisher: {
+                        "@type": "Organization",
+                        name: config.siteTitleAlt,
+                        logo: {
+                            "@type": "ImageObject",
+                            name: title + "logo",
+                            url: image,
+                            contentUrl: image,
+                        },
+                    },
+                    mainEntityOfPage: {
+                        "@type": "WebPage",
+                        "@id": blogURL
+                    },
                 }
-            ]);
+            );
         }
         return (
             <Helmet>

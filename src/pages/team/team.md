@@ -10,7 +10,7 @@ teamDescription: >-
   product development and consulting expertise. We listen, learn, and lead.
 team:
   - person:
-      avatar: /img/team/Anand.jpeg
+      avatar: /img/team/Anand.jpg
       background: slategray
       fbsiteurl: test
       githubsiteurl: test
@@ -55,7 +55,7 @@ team:
       title: Office Champion
       twtrsiteurl: test
   - person:
-      avatar: /img/team/Sapnil.jpeg
+      avatar: /img/team/Sapnil.jpg
       background: dimgray
       fbsiteurl: test
       githubsiteurl: test
@@ -99,7 +99,7 @@ team:
       title: Architect
       twtrsiteurl: test
   - person:
-      avatar: /img/team/Subbu.jpeg
+      avatar: /img/team/Subbu.jpg
       background: darkslategray
       fbsiteurl: test
       githubsiteurl: test
@@ -128,7 +128,7 @@ team:
       title: Architect – Service Design
       twtrsiteurl: test
   - person:
-      avatar: /img/team/Umesh.jpeg
+      avatar: /img/team/Umesh.jpg
       background: slategray
       fbsiteurl: test
       githubsiteurl: test
