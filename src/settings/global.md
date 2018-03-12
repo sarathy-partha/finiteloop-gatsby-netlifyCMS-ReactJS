@@ -6,10 +6,9 @@ siteDescription: >-
   FiniteLoop Systems - We are a boutique consulting firm focusing on experience
   design and highly scalable technical architecture. We help you scale
 logo: /img/flLogo.png
-logoTitle: FiniteLoop
+logoTitle: Finiteloop
 socialMediaCard:
   twitterCreatorAccount: '@partha360'
   twitterSiteAccount: '@_finiteloop'
-headerScripts: <!-- Add your analytics scripts / verification meta here -->
 ---
 
