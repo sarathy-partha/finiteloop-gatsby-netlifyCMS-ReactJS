@@ -21,9 +21,10 @@ const styles = theme => ({
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'column',
-        width: '100%',
         alignItems: 'center',
-        border: '2px solid #7CA699'
+        border: '2px solid #7CA699',
+        flex: 1,
+        marginTop: '10px',
     },
     submit: {
         margin: "3em 0"
@@ -36,8 +37,7 @@ const styles = theme => ({
         marginRight: theme.spacing.unit,
         width: 500,
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
-            marginLeft: "3%",
+            width: 300,
         }
     },
     singleLineInput: {
@@ -47,8 +47,7 @@ const styles = theme => ({
         lineHeight: 1.4,
         fontSize: "1.2em",
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
-            marginLeft: "3%",
+            width: 300,
         }
     },
     submitError: {
@@ -107,12 +106,12 @@ class ContactForm extends React.Component {
         const { open, email, firstname, lastname, message, company, submitError } = this.state;
 
         return (
-            <div style={{ padding: '50px', textAlign: 'center' }}>
-                <Typography style={{ lineHeight: 2, letterSpacing: 1.5 }} variant="headline" component="p">
+            <div style={{ margin: '35px'}}>
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25 }} variant="headline" component="p">
                     We would like to hear from you. If you are around the corner, we will be more than happy to share a cup of coffee with you.
                 </Typography>
                 <Divider />
-                <Typography style={{ lineHeight: 2, letterSpacing: 1.25 }} variant="subheading" component="p">
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25 }} variant="subheading" component="p">
                     Write to us, share your business needs, give us feedback, and we will get back to you the soonest.
                 </Typography>
                 <ValidatorForm
@@ -204,6 +203,9 @@ class ContactForm extends React.Component {
                     }}
                     message={<span id="message-id">Thank you for submitting your valuable inputs, we will get back to you soon.</span>}
                 />
+                <div style={{textAlign: 'center'}}>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5940331323814!2d77.61876621509283!3d12.933793690880655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae145ac669dd33%3A0xffea3cf03d6b7648!2sCommune+Coworks!5e0!3m2!1sen!2sin!4v1520867530834" width="100%" height="450" frameborder="0"  allowfullscreen></iframe>
+                </div>
             </div>
         );
     }
