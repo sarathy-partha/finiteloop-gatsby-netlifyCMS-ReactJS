@@ -23,7 +23,7 @@ collections:
           - {label: Site Url, name: siteUrl, widget: string, required: false}
           - {label: Site Description, name: siteDescription, widget: text, required: false}
           - {label: Logo, name: logo, widget: image, required: true}
-          - {label: Logo Title, name: logoTitle, widget: string}
+          - {label: Logo Title, name: logoTitle, widget: string, required: true}
           - label: Social Media Card
             name: socialMediaCard
             widget: object
