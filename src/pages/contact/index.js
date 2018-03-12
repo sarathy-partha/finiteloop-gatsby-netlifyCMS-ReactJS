@@ -7,6 +7,7 @@ import Button from "material-ui/Button";
 import { navigateTo } from "gatsby-link";
 
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import Snackbar from 'material-ui/Snackbar';
 import Divider from 'material-ui/Divider';
 
 function encode(data) {
@@ -58,6 +59,7 @@ const styles = theme => ({
 
 class ContactForm extends React.Component {
     state = {
+        open: false,
         firstname: "",
         lastname: "",
         email: "",
@@ -78,7 +80,7 @@ class ContactForm extends React.Component {
         this.setState({ submitError: "There was a network error." });
     };
 
-    handleSubmit = e => {
+    handleSubmit = (e, state) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -86,7 +88,7 @@ class ContactForm extends React.Component {
         })
             .then(() => {
                 console.log("Form submission success");
-                navigateTo("/success");
+                this.setState({ open: true, ...state });
             })
             .catch(error => {
                 console.error("Form submission error:", error);
@@ -96,17 +98,21 @@ class ContactForm extends React.Component {
         e.preventDefault();
     };
 
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
     render() {
         const { classes } = this.props;
-        const { email, firstname, lastname, message, company, submitError } = this.state;
+        const { open, email, firstname, lastname, message, company, submitError } = this.state;
 
         return (
-            <div style={{ padding: '50px', textAlign: 'center'}}>
-                <Typography style={{lineHeight: 2, letterSpacing: 1.5}} variant="headline" component="p">
+            <div style={{ padding: '50px', textAlign: 'center' }}>
+                <Typography style={{ lineHeight: 2, letterSpacing: 1.5 }} variant="headline" component="p">
                     We would like to hear from you. If you are around the corner, we will be more than happy to share a cup of coffee with you.
                 </Typography>
                 <Divider />
-                <Typography  style={{lineHeight: 2, letterSpacing: 1.25}} variant="subheading" component="p">
+                <Typography style={{ lineHeight: 2, letterSpacing: 1.25 }} variant="subheading" component="p">
                     Write to us, share your business needs, give us feedback, and we will get back to you the soonest.
                 </Typography>
                 <ValidatorForm
@@ -189,6 +195,15 @@ class ContactForm extends React.Component {
                         Submit
                 </Button>
                 </ValidatorForm>
+                <Snackbar
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                    open={open}
+                    onClose={this.handleClose}
+                    SnackbarContentProps={{
+                        'aria-describedby': 'message-id',
+                    }}
+                    message={<span id="message-id">Thank you for submitting your valuable inputs, we will get back to you soon.</span>}
+                />
             </div>
         );
     }
