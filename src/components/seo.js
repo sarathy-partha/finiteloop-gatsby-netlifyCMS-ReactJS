@@ -51,6 +51,17 @@ class SEO extends Component {
                 },
                 {
                     "@context": "http://schema.org",
+                    "@type": "Organization",
+                    "url": config.siteUrl,
+                    logo: {
+                        "@type": "ImageObject",
+                        name: title,
+                        url: image,
+                        contentUrl: image,
+                    },
+                },
+                {
+                    "@context": "http://schema.org",
                     "@type": "Article",
                     url: postURL,
                     name: title,

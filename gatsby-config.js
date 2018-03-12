@@ -38,6 +38,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: config.googleAnalyticsID
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-sitemap`,

@@ -3858,6 +3858,12 @@ gatsby-plugin-favicon@^2.1.1:
     babel-runtime "^6.26.0"
     favicons-webpack-plugin "0.0.7"
 
+gatsby-plugin-google-analytics@^1.0.22:
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.22.tgz#fb2a3311d64e6daf77004a482b73eee0181fe8c1"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-manifest@^1.0.15:
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.15.tgz#849d305adabe39445b9f862b187f4c56e608bd72"
