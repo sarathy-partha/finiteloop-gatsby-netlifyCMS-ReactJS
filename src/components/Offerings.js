@@ -16,7 +16,7 @@ export const OfferingsPageTemplate = ({ props, offering }) => {
             {isAlignLeft && (
                 <div name="offering" className={classes.offeringsSectionLeft}>
                     <div className={classes.offeringLeft} >
-                        <img src={offering.frontmatter.image} />
+                        <img alt={offering.frontmatter.title} src={offering.frontmatter.image} />
                     </div>
                     <div className={classes.offeringRight}>
                         <Typography component="h2" className={classes.title1}>

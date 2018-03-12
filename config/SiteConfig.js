@@ -8,7 +8,7 @@ module.exports = {
     siteLanguage: 'en', // Language Tag on <html> element
     siteLogo: '/img/flLogo.png', // Used for SEO and manifest
     //siteBanner: '/social/banner.jpg',
-    siteDescription: 'finite minds, infinite ideas, right solution',
+    siteDescription: 'finiteloop - We are a boutique consulting firm focusing on experience design and highly scalable technical architecture',
 
     //siteFBAppID: '123456789', // Facebook App ID
     userTwitter: '_finiteloop', // Twitter Username

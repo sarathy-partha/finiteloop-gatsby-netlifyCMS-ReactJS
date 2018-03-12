@@ -48,8 +48,8 @@ export const TeamsPageTemplate = ({ props, teams }) => {
                                             </IconButton>
                                         </div>
                                         <CardContent className={classes.content}>
-                                            <Typography variant="body1" className={classes.offeringBody1} component="h1">
-                                                {person.name}
+                                            <Typography variant="body1" className={classes.offeringBody1} component="h2">
+                                                {person.name + " "}
                                                 <img height="30" width="30" src="/img/kolam.png" />
                                                 {person.title}
                                             </Typography>
