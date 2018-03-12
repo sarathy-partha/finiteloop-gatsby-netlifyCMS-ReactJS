@@ -121,10 +121,11 @@ team:
       lnkdnsiteurl: test
       name: Sudarshan
       quote: >-
-        Returning to one’s root has taken much effort, Dwelling in my hut, I see
-        nothing without, Rivers flow, flowers are red.
-
-        Wait for this space to be updated. Stories are being written.
+        An IITian turned Social entrepreneur; forever a music and science buff,
+        Sudarshan will quickly find something to relate to you with.
+        Boisterously gregarious; he will soon seem more a part of your team as
+        he goes around helping you, in finding out how to address the challenges
+        you are facing and making it look easy & apparent. 
       title: Architect – Service Design
       twtrsiteurl: test
   - person:
