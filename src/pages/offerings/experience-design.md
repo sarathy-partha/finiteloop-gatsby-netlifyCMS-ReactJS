@@ -3,7 +3,7 @@ templateKey: offering
 image: /img/experiancedesign.png
 path: '/experience-design '
 title: Experience Design
-order: '5'
+order: 5
 align: left
 ---
 Form follows function and we follow design thinking. We are passionate about good design. We are the voice of the user in your war room. We have worked on education products that brings delight to students, teachers, parents and school administration alike. We have designed business-critical sales apps for large luxury brands. 

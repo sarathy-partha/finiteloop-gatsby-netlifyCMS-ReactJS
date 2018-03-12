@@ -112,7 +112,7 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Order (Priotity)", name: "order", widget: "number", default: 1, required: true}
+      - {label: "Order (Priotity)", name: "order", widget: "number", default: 1, valueType: "int", required: true}
       - {label: "Align Content", name: "align", widget: "select", options: ["left", "right"], required: true}
 
   - name: "pages"
