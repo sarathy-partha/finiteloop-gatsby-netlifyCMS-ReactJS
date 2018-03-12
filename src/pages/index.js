@@ -211,7 +211,7 @@ class IndexPage extends React.Component {
         </div>
         <Offerrings offeringsData={this.props} />
         <Teams teamsData={this.props} />
-        <CaseStudies caseStudiesData={this.props} />
+       {/*<CaseStudies caseStudiesData={this.props} />*/}
         <SEO postEdges={this.props} />
       </div >
     )

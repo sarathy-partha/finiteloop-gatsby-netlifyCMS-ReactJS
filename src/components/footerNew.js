@@ -35,9 +35,9 @@ const FooterNew = (props) => {
     const { classes } = props;
     return (
         <div className={classes.root} >
-            <Button color="inherit" to="/case-studies" component={GatsbyLink} className={classes.button}>
+            {/* <Button color="inherit" to="/case-studies" component={GatsbyLink} className={classes.button}>
                 Case Studies
-            </Button>
+            </Button> */ }
             <Button color="inherit" to="/team" component={GatsbyLink} className={classes.button}>
                 Team
             </Button>
