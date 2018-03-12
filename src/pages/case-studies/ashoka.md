@@ -2,6 +2,7 @@
 templateKey: case-study
 path: /ashoka
 title: Ashoka
+image: /img/ashoka.jpg
 date: 2016-03-02T18:30:00.000Z
 homepage: true
 customer:
