@@ -84,7 +84,6 @@ export const CaseStudyTemplate = ({
 
 const CaseStudy = props => {
   const { markdownRemark: casestudy } = props.data
-  console.log(props.data)
   return (
     <div>
       <CaseStudyTemplate

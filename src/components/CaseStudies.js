@@ -24,7 +24,6 @@ function compare(a, b) {
 
 export const CaseStudiesTemplate = ({ props, casestudy }) => {
     const { classes, theme } = props;
-    console.log(classes)
     return (
 
         <div key={casestudy.title} >

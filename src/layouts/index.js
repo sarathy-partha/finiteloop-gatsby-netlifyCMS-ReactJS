@@ -16,7 +16,6 @@ import BottomBar from '../components/BottomBar';
 import FooterNew from '../components/footerNew';
 
 const TemplateWrapper = ({ children, data }) => {
-  console.log(data);
   const { global: settings } = data
   return (
     <div>
