@@ -86,9 +86,6 @@ class Navbar extends React.Component {
           Our People
         </Button>
         <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
-          The Way
-        </Button>
-        <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
           Get in Touch
         </Button>
         <Divider />
@@ -114,9 +111,6 @@ class Navbar extends React.Component {
                   <Button component={GatsbyLink} to="/team" className={classes.button} color="primary">
                     Our People
                 </Button>
-                  <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
-                    The Way
-                  </Button>
                   <Button component={GatsbyLink} to="/contact" className={classes.button} color="primary">
                     Get in Touch
                   </Button>

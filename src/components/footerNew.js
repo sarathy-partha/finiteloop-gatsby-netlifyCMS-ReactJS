@@ -44,14 +44,8 @@ const FooterNew = (props) => {
             <Button color="inherit" href="https://github.com/finite-loop" target="_new" className={classes.button}>
                 Open Source
             </Button>
-            <Button color="inherit" href="http://khyateh.com/labs/" target="_new" className={classes.button}>
-                The Way
-            </Button>
-            <Button color="inherit" href="http://khyateh.com/contact/" target="_new" className={classes.button}>
+            <Button color="inherit" to="/contact" component={GatsbyLink} className={classes.button}>
                 Contact Us
-            </Button>
-            <Button color="inherit" href="http://khyateh.com/privacypolicy/" target="_new" className={classes.button}>
-                Privacy Policy
             </Button>
         </div >
     )

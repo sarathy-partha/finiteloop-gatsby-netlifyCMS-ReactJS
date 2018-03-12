@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import Button from "material-ui/Button";
 import { navigateTo } from "gatsby-link";
 
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
+import Divider from 'material-ui/Divider';
 
 function encode(data) {
     return Object.keys(data)
@@ -14,24 +16,38 @@ function encode(data) {
 }
 
 const styles = theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        width: '100%',
+        alignItems: 'center',
+        border: '2px solid #7CA699'
+    },
     submit: {
         margin: "3em 0"
         //width: "100%"
     },
     multilineInput: {
         lineHeight: 1.4,
-        fontSize: "1.2em"
+        fontSize: "1.2em",
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 500,
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            marginLeft: "3%",
+        }
     },
     singleLineInput: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 500,
         lineHeight: 1.4,
         fontSize: "1.2em",
         [theme.breakpoints.down('sm')]: {
-            width: "47%",
+            width: "100%",
             marginLeft: "3%",
-            "&:first-child": {
-                marginRight: "3%",
-                marginLeft: 0
-            }
         }
     },
     submitError: {
@@ -43,9 +59,11 @@ const styles = theme => ({
 class ContactForm extends React.Component {
     state = {
         firstname: "",
+        lastname: "",
         email: "",
         message: "",
-        submitError: ""
+        company: "",
+        submitError: "",
     };
 
     handleChange = event => {
@@ -80,66 +98,98 @@ class ContactForm extends React.Component {
 
     render() {
         const { classes } = this.props;
-        const { email, name, message, submitError } = this.state;
+        const { email, firstname, lastname, message, company, submitError } = this.state;
 
         return (
-            <ValidatorForm
-                onSubmit={this.handleSubmit}
-                onError={errors => console.log(errors)}
-                name="contact"
-                ref={f => (this.form = f)}
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-            >
-                {submitError && <p className={classes.submitError}>{submitError}</p>}
-                <TextValidator
-                    id="firstname"
-                    name="firstname"
-                    label="First Name"
-                    value={name}
-                    onChange={this.handleChange}
-                    validators={["required"]}
-                    errorMessages={["this field is required"]}
-                    fullWidth
-                    margin="normal"
-                    className={classes.singleLineInput}
-                />
-                <TextValidator
-                    id="email"
-                    name="email"
-                    label="E-mail"
-                    value={email}
-                    onChange={this.handleChange}
-                    validators={["required", "isEmail"]}
-                    errorMessages={["this field is required", "email is not valid"]}
-                    fullWidth
-                    margin="normal"
-                    className={classes.singleLineInput}
-                />
-                <TextValidator
-                    id="message"
-                    name="message"
-                    label="Message"
-                    value={message}
-                    onChange={this.handleChange}
-                    validators={["required"]}
-                    errorMessages={["this field is required"]}
-                    multiline
-                    fullWidth
-                    margin="normal"
-                    className={classes.multilineInput}
-                />
-                <input name="bot-field" style={{ display: "none" }} />
-                <Button
-                    variant="raised"
-                    color="primary"
-                    size="large"
-                    type="submit"
-                    className={classes.submit}
+            <div style={{ padding: '50px', textAlign: 'center'}}>
+                <Typography style={{lineHeight: 2, letterSpacing: 1.5}} variant="headline" component="p">
+                    We would like to hear from you. If you are around the corner, we will be more than happy to share a cup of coffee with you.
+                </Typography>
+                <Divider />
+                <Typography  style={{lineHeight: 2, letterSpacing: 1.25}} variant="subheading" component="p">
+                    Write to us, share your business needs, give us feedback, and we will get back to you the soonest.
+                </Typography>
+                <ValidatorForm
+                    onSubmit={this.handleSubmit}
+                    onError={errors => console.log(errors)}
+                    name="Contact"
+                    ref={f => (this.form = f)}
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    className={classes.container}
                 >
-                    Submit
+                    {submitError && <p className={classes.submitError}>{submitError}</p>}
+                    <TextValidator
+                        id="firstname"
+                        name="firstname"
+                        label="First Name"
+                        value={firstname}
+                        onChange={this.handleChange}
+                        validators={["required"]}
+                        errorMessages={["this field is required"]}
+                        fullWidth
+                        margin="normal"
+                        className={classes.singleLineInput}
+                    />
+                    <TextValidator
+                        id="lastname"
+                        name="lastname"
+                        label="Last Name"
+                        value={lastname}
+                        onChange={this.handleChange}
+                        validators={["required"]}
+                        errorMessages={["this field is required"]}
+                        fullWidth
+                        margin="normal"
+                        className={classes.singleLineInput}
+                    />
+                    <TextValidator
+                        id="email"
+                        name="email"
+                        label="E-mail"
+                        value={email}
+                        onChange={this.handleChange}
+                        validators={["required", "isEmail"]}
+                        errorMessages={["this field is required", "email is not valid"]}
+                        fullWidth
+                        margin="normal"
+                        className={classes.singleLineInput}
+                    />
+                    <TextValidator
+                        id="company"
+                        name="company"
+                        label="Company Name"
+                        value={company}
+                        onChange={this.handleChange}
+                        fullWidth
+                        margin="normal"
+                        className={classes.singleLineInput}
+                    />
+                    <TextValidator
+                        id="message"
+                        name="message"
+                        label="Message"
+                        value={message}
+                        onChange={this.handleChange}
+                        validators={["required"]}
+                        errorMessages={["this field is required"]}
+                        multiline
+                        fullWidth
+                        margin="normal"
+                        className={classes.multilineInput}
+                    />
+                    <input name="bot-field" style={{ display: "none" }} />
+                    <Button
+                        variant="raised"
+                        color="primary"
+                        size="large"
+                        type="submit"
+                        className={classes.submit}
+                    >
+                        Submit
                 </Button>
-            </ValidatorForm>
+                </ValidatorForm>
+            </div>
         );
     }
 }
