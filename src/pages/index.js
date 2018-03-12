@@ -85,13 +85,13 @@ const styles = theme => ({
     [theme.breakpoints.down('sm')]: {
       display: 'none', // Overrides inline-style
     },
-    marginLeft: '3%',
-    marginRight: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
   offeringRight: {
     width: '100%',
-    marginLeft: '3%',
-    marginRight: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
   offeringBody1: {
     fontSize: '1.25rem',
@@ -154,8 +154,8 @@ const styles = theme => ({
 
   // Case Studies section
   caseStudySection: {
-    marginLeft: '3%',
-    marginRight: '3%',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
   caseStudycard: {
     display: 'flex',
@@ -168,8 +168,8 @@ const styles = theme => ({
     border: '2px solid #70A999',
     boxShadow: 'none',
     backgroundColor: 'transparent',
-    marginLeft: '3%',
-    marginRightL: '3%',
+    marginLeft: '5%',
+    marginRightL: '5%',
   },
   caseStudymedia: {
     height: 350,
