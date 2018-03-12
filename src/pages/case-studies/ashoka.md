@@ -4,7 +4,6 @@ path: /ashoka
 title: Ashoka
 image: /img/ashoka.jpg
 date: 2016-03-02T18:30:00.000Z
-image: /img/ashoka.jpg
 homepage: true
 customer:
   name: Ashoka
