@@ -51,10 +51,10 @@ collections:
               name: item
               widget: object
               fields:
-                - {label: "Title", name: title, widget: text}
-                - {label: "URL", name: url, widget: text, default: "/"}
+                - {label: "Title", name: title, widget: string}
+                - {label: "URL", name: url, widget: string, default: "/"}
                 - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
-                - {label: "Glyph Icon", name: icon, widget: "text"}
+                - {label: "Glyph Icon", name: icon, widget: "string"}
         - label: "Footer Links"
           name: "footerlinks"
           widget: "list"
@@ -63,10 +63,10 @@ collections:
               name: item
               widget: object
               fields:
-                - {label: "Title", name: title, widget: text}
-                - {label: "URL", name: url, widget: text, default: "/"}
+                - {label: "Title", name: title, widget: string}
+                - {label: "URL", name: url, widget: string, default: "/"}
                 - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
-                - {label: "Glyph Icon", name: icon, widget: "text"}
+                - {label: "Glyph Icon", name: icon, widget: "string"}
 
   - name: "casestudy"
     label: "Case Study"
@@ -78,6 +78,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case-study"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: Image, name: image, widget: image}
       - {label: "Date", name: date, widget: datetime, default: "Date"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Display in homepage?", name: "homepage", widget: "boolean", default: false}

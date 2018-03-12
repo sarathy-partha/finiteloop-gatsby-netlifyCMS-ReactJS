@@ -106,7 +106,7 @@ const styles = theme => ({
   teams: {
     display: 'flex',
     alignItems: 'stretch',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   teamsTitle: {
     textAlign: 'center',
@@ -117,7 +117,7 @@ const styles = theme => ({
     display: 'flex',
     // marginTop: '5px',
     flex: 1,
-    maxWidth: '450px',
+    maxWidth: '520px',
     alignItems: 'center',
     flexDirection: 'column',
     minHeight: '100%',
@@ -153,31 +153,35 @@ const styles = theme => ({
   },
 
   // Case Studies section
-    caseStudycard: {
-      display: 'flex',
-      // marginTop: '5px',
-      flex: 1,
-      maxWidth: '450px',
-      alignItems: 'center',
-      flexDirection: 'column',
-      minHeight: '100%',
-      border: '2px solid #70A999',
-      boxShadow: 'none',
-      backgroundColor: 'transparent',
-      marginLeft: '3%',
-      marginRightL: '3%',
-    },
-    caseStudymedia: {
-      height: 350,
-      width: 300,
-    },
-    caseStudycontent: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection: 'column',
-      backgroundColor: '#70A999',
-    },
+  caseStudySection: {
+    marginLeft: '3%',
+    marginRight: '3%',
+  },
+  caseStudycard: {
+    display: 'flex',
+    // marginTop: '5px',
+    flex: 1,
+    maxWidth: '450px',
+    alignItems: 'center',
+    flexDirection: 'column',
+    minHeight: '100%',
+    border: '2px solid #70A999',
+    boxShadow: 'none',
+    backgroundColor: 'transparent',
+    marginLeft: '3%',
+    marginRightL: '3%',
+  },
+  caseStudymedia: {
+    height: 350,
+    width: 300,
+  },
+  caseStudycontent: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    backgroundColor: '#70A999',
+  },
 })
 
 class IndexPage extends React.Component {

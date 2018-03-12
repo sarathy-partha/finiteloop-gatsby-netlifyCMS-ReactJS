@@ -34,7 +34,7 @@ export const TeamsPageTemplate = ({ props, teams }) => {
                     .map(({ person }) => {
                         return (
                             <div key={person.name} >
-                                <Grid className={classes.card} xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
+                                <Grid className={classes.card} xs item style={{ paddingBottom: '10px' }}>
                                     <Card className={classes.card}>
                                         <div>
                                             <Avatar style={{ height: 150, width: 150, border: '5px solid #70A898', }}
@@ -73,7 +73,10 @@ const Teams = ({ teamsData }) => {
     const { classes, theme } = teamsData;
     const { edges: aboutus } = teamsData.data.Teams
     return (
-        <div>
+        <section name="teams" style={{
+            paddingLeft: '3%', paddingRight: '3%',
+            background: 'linear-gradient(-180deg, #FAFAFA 0%, #F1F1F1 100%)'
+        }}>
             {aboutus
                 .map(({ node: team }) => (
                     <TeamsPageTemplate key={team.frontmatter.title}
@@ -82,9 +85,8 @@ const Teams = ({ teamsData }) => {
                     />
                 ))
             }
-        </div>
+        </section>
     )
 }
 
 export default Teams;
-

@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
+import SEO from '../components/seo';
+
 const styles = theme => ({
     title1: {
         fontSize: '36px',
@@ -43,13 +45,16 @@ const Offering = props => {
     const { Offerings: offering } = props.data
 
     return (
-        <OfferingTemplate
-            content={offering.html}
-            contentComponent={HTMLContent}
-            helmet={<Helmet title={`Offering & Services | ${offering.frontmatter.title}`} />}
-            title={offering.frontmatter.title}
-            image={offering.frontmatter.image}
-            classes={props.classes} />
+        <div>
+            <OfferingTemplate
+                content={offering.html}
+                contentComponent={HTMLContent}
+                helmet={<Helmet title={`Offering & Services | ${offering.frontmatter.title}`} />}
+                title={offering.frontmatter.title}
+                image={offering.frontmatter.image}
+                classes={props.classes} />
+            <SEO postPath={offering.frontmatter.path} postNode={offering} postSEO />
+        </div>
     )
 }
 
@@ -64,6 +69,7 @@ query Offering($path: String!) {
 Offerings: markdownRemark(frontmatter:  {path: { eq: $path }}) {
         html
         id
+        excerpt
         frontmatter {
           path
           title

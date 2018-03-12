@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
+import MarkdownRenderer from 'react-markdown-renderer';
+import SEO from '../components/seo';
+
 const styles = theme => ({
   title1: {
     fontSize: '36px',
@@ -52,26 +55,26 @@ export const CaseStudyTemplate = ({
           <Typography component="h3" className={classes.title2}>
             Focus
           </Typography>
-          <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
-            <PostContent content={casestudy.focus} />
+          <div id="focus" style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
+            <MarkdownRenderer markdown={casestudy.focus} />
           </div>
           <Typography component="h3" className={classes.title2}>
             Challenges
           </Typography>
           <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
-            <PostContent content={casestudy.challenges} />
+            <MarkdownRenderer markdown={casestudy.challenges} />
           </div>
           <Typography component="h3" className={classes.title2}>
             Solution
           </Typography>
           <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
-            <PostContent content={casestudy.solution} />
+            <MarkdownRenderer markdown={casestudy.solution} />
           </div>
           <Typography component="h3" className={classes.title2}>
             Benefits
           </Typography>
           <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
-            <PostContent content={casestudy.benefits} />
+            <MarkdownRenderer markdown={casestudy.benefits} />
           </div>
         </div>
       </div>
@@ -83,16 +86,19 @@ const CaseStudy = props => {
   const { markdownRemark: casestudy } = props.data
   console.log(props.data)
   return (
-    <CaseStudyTemplate
-      content={casestudy.html}
-      contentComponent={HTMLContent}
-      description={casestudy.frontmatter.description}
-      helmet={<Helmet title={`Case Study | ${casestudy.frontmatter.title}`} />}
-      title={casestudy.frontmatter.title}
-      image={casestudy.frontmatter.image}
-      casestudy={casestudy.frontmatter.casestudy}
-      classes={props.classes}
-    />
+    <div>
+      <CaseStudyTemplate
+        content={casestudy.html}
+        contentComponent={HTMLContent}
+        description={casestudy.frontmatter.description}
+        helmet={<Helmet title={`Case Study | ${casestudy.frontmatter.title}`} />}
+        title={casestudy.frontmatter.title}
+        image={casestudy.frontmatter.image}
+        casestudy={casestudy.frontmatter.casestudy}
+        classes={props.classes}
+      />
+      <SEO postPath={casestudy.frontmatter.path} postNode={casestudy} postSEO />
+    </div>
   )
 }
 
@@ -106,7 +112,9 @@ export const pageQuery = graphql`
   query CaseStudyByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt
       frontmatter {
+        path
         image
         title
         date

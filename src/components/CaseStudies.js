@@ -28,7 +28,7 @@ export const CaseStudiesTemplate = ({ props, casestudy }) => {
     return (
 
         <div key={casestudy.title} >
-            <Grid className="" xs item style={{ paddingRight: '10px', paddingBottom: '10px' }}>
+            <Grid className="" xs item style={{paddingBottom: '10px' }}>
                 <Card className={classes.caseStudycard}>
                     <CardMedia
                         className={classes.caseStudymedia}

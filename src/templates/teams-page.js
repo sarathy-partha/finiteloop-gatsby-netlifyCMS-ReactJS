@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 
 import Content, { HTMLContent } from '../components/Content'
 import Teams from '../components/teams';
+import SEO from '../components/seo';
 
 const styles = theme => ({
   // Teams Section styles
@@ -120,12 +121,13 @@ const styles = theme => ({
   )
 } */
 
-export const TeamsPageTemplate = ({ props, title, content, contentComponent, teams, teamTitle, teamDescription, timer }) => {
+export const TeamsPageTemplate = ({ props, title, content, contentComponent, teams, teamTitle, teamDescription, timer, teamData }) => {
   const PageContent = contentComponent || Content
   const { classes, theme } = props;
   return (
     <section>
       <Teams teamsData={props} />
+      <SEO postPath={teamData.frontmatter.path} postNode={teamData} postSEO />
     </section>
   )
 }
@@ -146,6 +148,7 @@ const TeamsPageTemplateWrapper = (props) => {
             teams={aboutusData.frontmatter.team}
             props={props}
             timer={1000}
+            teamData={aboutusData}
             content={aboutusData.html}
             contentComponent={HTMLContent}
           />
@@ -170,6 +173,7 @@ export const teamsPageQuery = graphql`
         node {
           html
           id
+          excerpt
           frontmatter {
             path
             title
