@@ -30,7 +30,18 @@ class SEO extends Component {
                 url: blogURL,
                 name: title,
                 alternateName: title ? config.siteTitleAlt : "",
-            }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "url": config.siteUrl,
+                logo: {
+                    "@type": "ImageObject",
+                    name: title,
+                    url: image,
+                    contentUrl: image,
+                },
+            },
         ];
         if (postSEO) {
             schemaOrgJSONLD.push(
@@ -48,17 +59,6 @@ class SEO extends Component {
                             }
                         }
                     ]
-                },
-                {
-                    "@context": "http://schema.org",
-                    "@type": "Organization",
-                    "url": config.siteUrl,
-                    logo: {
-                        "@type": "ImageObject",
-                        name: title,
-                        url: image,
-                        contentUrl: image,
-                    },
                 },
                 {
                     "@context": "http://schema.org",
