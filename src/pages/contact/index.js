@@ -10,51 +10,84 @@ import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import Snackbar from 'material-ui/Snackbar';
 import Divider from 'material-ui/Divider';
 
-function encode(data) {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-}
+import Keys from '../../../config/APIKeys';
+
+import {
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+} from "react-google-maps";
+
+import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel'
 
 const styles = theme => ({
     container: {
         display: 'flex',
-        flexWrap: 'wrap',
-        flexDirection: 'column',
-        alignItems: 'center',
-        border: '2px solid #7CA699',
         flex: 1,
         marginTop: '10px',
+        justifyContent: 'space-evenly',
+        flexWrap: 'wrap',
+        paddingTop: '20px',
+    },
+    form: {
+        width: 600,
     },
     submit: {
-        margin: "3em 0"
-        //width: "100%"
+        display: 'flex',
+        margin: "3em 0",
+        alignItems: 'center',
     },
     multilineInput: {
         lineHeight: 1.4,
         fontSize: "1.2em",
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 500,
+        width: 600,
         [theme.breakpoints.down('sm')]: {
-            width: 300,
+            width: '100%',
         }
     },
     singleLineInput: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 500,
+        width: 600,
         lineHeight: 1.4,
         fontSize: "1.2em",
         [theme.breakpoints.down('sm')]: {
-            width: 300,
+            width: '100%',
         }
     },
     submitError: {
         background: "red",
         color: "white"
-    }
+    },
+    maps: {
+        width: '800px',
+    },
 });
+
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+    <GoogleMap
+        defaultZoom={17}
+        defaultCenter={{ lat: 12.933739, lng: 77.620947 }}
+    >
+        <MarkerWithLabel
+            position={{ lat: 12.933739, lng: 77.620947 }}
+            labelAnchor={new google.maps.Point(5, 0)}
+            labelStyle={{ color: "#f9f9f9", border: "2px solid #70A999", backgroundColor: '#70A999', fontWeight:500, fontSize: "18px", padding: "8px" }}
+        >
+        <div>FiniteLoop Systems</div>
+        </MarkerWithLabel>
+    </GoogleMap>
+));
+
+const GoogleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=" + Keys.googleMapsAPIKey + "&v=3.exp&libraries=geometry,drawing,places";
+
+function encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+}
 
 class ContactForm extends React.Component {
     state = {
@@ -106,107 +139,116 @@ class ContactForm extends React.Component {
         const { open, email, firstname, lastname, message, company, submitError } = this.state;
 
         return (
-            <div style={{ margin: '35px'}}>
-                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25 }} variant="headline" component="p">
+            <div style={{ margin: '35px' }}>
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="headline" component="p">
                     We would like to hear from you. If you are around the corner, we will be more than happy to share a cup of coffee with you.
                 </Typography>
-                <Divider />
-                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25 }} variant="subheading" component="p">
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="subheading" component="p">
                     Write to us, share your business needs, give us feedback, and we will get back to you the soonest.
                 </Typography>
-                <ValidatorForm
-                    onSubmit={this.handleSubmit}
-                    onError={errors => console.log(errors)}
-                    name="Contact"
-                    ref={f => (this.form = f)}
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                    className={classes.container}
-                >
-                    {submitError && <p className={classes.submitError}>{submitError}</p>}
-                    <TextValidator
-                        id="firstname"
-                        name="firstname"
-                        label="First Name"
-                        value={firstname}
-                        onChange={this.handleChange}
-                        validators={["required"]}
-                        errorMessages={["this field is required"]}
-                        fullWidth
-                        margin="normal"
-                        className={classes.singleLineInput}
-                    />
-                    <TextValidator
-                        id="lastname"
-                        name="lastname"
-                        label="Last Name"
-                        value={lastname}
-                        onChange={this.handleChange}
-                        validators={["required"]}
-                        errorMessages={["this field is required"]}
-                        fullWidth
-                        margin="normal"
-                        className={classes.singleLineInput}
-                    />
-                    <TextValidator
-                        id="email"
-                        name="email"
-                        label="E-mail"
-                        value={email}
-                        onChange={this.handleChange}
-                        validators={["required", "isEmail"]}
-                        errorMessages={["this field is required", "email is not valid"]}
-                        fullWidth
-                        margin="normal"
-                        className={classes.singleLineInput}
-                    />
-                    <TextValidator
-                        id="company"
-                        name="company"
-                        label="Company Name"
-                        value={company}
-                        onChange={this.handleChange}
-                        fullWidth
-                        margin="normal"
-                        className={classes.singleLineInput}
-                    />
-                    <TextValidator
-                        id="message"
-                        name="message"
-                        label="Message"
-                        value={message}
-                        onChange={this.handleChange}
-                        validators={["required"]}
-                        errorMessages={["this field is required"]}
-                        multiline
-                        fullWidth
-                        margin="normal"
-                        className={classes.multilineInput}
-                    />
-                    <input name="bot-field" style={{ display: "none" }} />
-                    <Button
-                        variant="raised"
-                        color="primary"
-                        size="large"
-                        type="submit"
-                        className={classes.submit}
+                <div className={classes.container}>
+                    <ValidatorForm
+                        onSubmit={this.handleSubmit}
+                        onError={errors => console.log(errors)}
+                        name="Contact"
+                        ref={f => (this.form = f)}
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
+                        className={classes.form}
                     >
-                        Submit
-                </Button>
-                </ValidatorForm>
-                <Snackbar
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                    open={open}
-                    onClose={this.handleClose}
-                    SnackbarContentProps={{
-                        'aria-describedby': 'message-id',
-                    }}
-                    message={<span id="message-id">Thank you for submitting your valuable inputs, we will get back to you soon.</span>}
-                />
-                <div style={{textAlign: 'center'}}>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5940331323814!2d77.61876621509283!3d12.933793690880655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae145ac669dd33%3A0xffea3cf03d6b7648!2sCommune+Coworks!5e0!3m2!1sen!2sin!4v1520867530834" width="100%" height="450" frameborder="0"  allowfullscreen></iframe>
-                </div>
-            </div>
+                        {submitError && <p className={classes.submitError}>{submitError}</p>}
+                        <TextValidator
+                            id="firstname"
+                            name="firstname"
+                            label="First Name"
+                            value={firstname}
+                            onChange={this.handleChange}
+                            validators={["required"]}
+                            errorMessages={["This field is required"]}
+                            fullWidth
+                            margin="normal"
+                            className={classes.singleLineInput}
+                        />
+                        <TextValidator
+                            id="lastname"
+                            name="lastname"
+                            label="Last Name"
+                            value={lastname}
+                            onChange={this.handleChange}
+                            validators={["required"]}
+                            errorMessages={["This field is required"]}
+                            fullWidth
+                            margin="normal"
+                            className={classes.singleLineInput}
+                        />
+                        <TextValidator
+                            id="email"
+                            name="email"
+                            label="E-mail"
+                            value={email}
+                            onChange={this.handleChange}
+                            validators={["required", "isEmail"]}
+                            errorMessages={["This field is required", "E-mail is not valid"]}
+                            fullWidth
+                            margin="normal"
+                            className={classes.singleLineInput}
+                        />
+                        <TextValidator
+                            id="company"
+                            name="company"
+                            label="Company Name"
+                            value={company}
+                            onChange={this.handleChange}
+                            fullWidth
+                            margin="normal"
+                            className={classes.singleLineInput}
+                        />
+                        <TextValidator
+                            id="message"
+                            name="message"
+                            label="Message"
+                            value={message}
+                            onChange={this.handleChange}
+                            validators={["required"]}
+                            errorMessages={["This field is required"]}
+                            multiline
+                            fullWidth
+                            margin="normal"
+                            className={classes.multilineInput}
+                        />
+                        <input name="bot-field" style={{ display: "none" }} />
+                        <br />
+                        <div style={{ alignItems: 'center' }}>
+                            <Button
+                                variant="raised"
+                                color="primary"
+                                size="large"
+                                type="submit"
+                                className={classes.submit}
+                            >
+                                Submit
+                        </Button>
+                        </div>
+                    </ValidatorForm>
+                    <Snackbar
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                        open={open}
+                        onClose={this.handleClose}
+                        SnackbarContentProps={{
+                            'aria-describedby': 'message-id',
+                        }}
+                        message={<span id="message-id">Thank you for submitting your valuable inputs, we will get back to you soon.</span>}
+                    />
+                    <div className={classes.maps}>
+                        <MyMapComponent
+                            googleMapURL={GoogleMapsUrl}
+                            loadingElement={<div style={{ height: `100%` }} />}
+                            containerElement={<div style={{ height: `400px` }} />}
+                            mapElement={<div style={{ height: `100%` }} />}
+                        />
+                    </div>
+                </div >
+            </div >
         );
     }
 }
