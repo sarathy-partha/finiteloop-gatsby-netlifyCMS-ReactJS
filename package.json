@@ -22,7 +22,7 @@
     "gatsby-transformer-json": "^1.0.16",
     "gatsby-transformer-remark": "^1.7.34",
     "gatsby-transformer-sharp": "^1.6.22",
-    "material-ui": "^1.0.0-beta.35",
+    "material-ui": "^1.0.0-beta.37",
     "material-ui-icons": "^1.0.0-beta.35",
     "prop-types": "^15.6.1",
     "react-google-maps": "^9.4.5",

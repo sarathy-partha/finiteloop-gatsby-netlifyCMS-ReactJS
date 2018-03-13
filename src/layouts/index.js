@@ -4,8 +4,10 @@ import compose from 'recompose/compose';
 import Helmet from 'react-helmet'
 
 import withRoot from '../withRoot';
+
 import withWidth from 'material-ui/utils/withWidth';
 import Hidden from 'material-ui/Hidden';
+import CssBaseline from 'material-ui/CssBaseline';
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/footer'
@@ -19,6 +21,7 @@ const TemplateWrapper = ({ children, data }) => {
   const { global: settings } = data
   return (
     <div>
+      <CssBaseline />
       <Helmet title={settings.frontmatter.siteTitle} />
       <Hidden implementation="css">
         <Navbar title={settings.frontmatter.logoTitle} logo={settings.frontmatter.logo} />

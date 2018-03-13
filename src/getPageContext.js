@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-import { SheetsRegistry } from 'jss';
+import { SheetsRegistry } from 'react-jss/lib/jss';
 import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
 
 // A theme with custom primary and secondary color.
