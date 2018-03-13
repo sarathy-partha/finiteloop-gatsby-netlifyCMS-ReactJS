@@ -41,6 +41,16 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-sitemap`,
+    'gatsby-plugin-jss',
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#70A898`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
