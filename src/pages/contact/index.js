@@ -248,7 +248,7 @@ class ContactForm extends React.Component {
                         />
                     </div>
                 </div >
-            </div >
+            </div>
         );
     }
 }

@@ -25,12 +25,11 @@ function withRoot(Component) {
             return (
                 <MuiThemeProvider
                     theme={this.pageContext.theme}
-                    sheetsManager={this.pageContext.sheetsManager}
-                >
-                <div>
-                    <Reboot />
-                    <Component {...this.props} />
-                </div>
+                    sheetsManager={this.pageContext.sheetsManager}>
+                    <div>
+                        <Reboot />
+                        <Component {...this.props} />
+                    </div>
                 </MuiThemeProvider>
             );
         }
