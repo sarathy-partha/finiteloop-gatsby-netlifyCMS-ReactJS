@@ -41,7 +41,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     `gatsby-plugin-sitemap`,
-    'gatsby-plugin-jss',
+   // 'gatsby-plugin-jss',
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

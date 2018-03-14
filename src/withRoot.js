@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MuiThemeProvider } from 'material-ui/styles';
 import getPageContext from './getPageContext';
-import JssProvider from 'react-jss/lib/JssProvider';
 
 function withRoot(Component) {
     class WithRoot extends React.Component {
@@ -12,7 +11,7 @@ function withRoot(Component) {
 
         componentDidMount() {
             // Remove the server-side injected CSS.
-            const jssStyles = document.querySelector('#jss-server-side');
+            const jssStyles = document.querySelector('#server-side-jss');
             if (jssStyles && jssStyles.parentNode) {
                 jssStyles.parentNode.removeChild(jssStyles);
             }
@@ -23,13 +22,11 @@ function withRoot(Component) {
         render() {
             // MuiThemeProvider makes the theme available down the React tree thanks to React context.
             return (
-                <JssProvider registry={this.pageContext.sheetsRegistry} generateClassName={this.pageContext.generateClassName}>
-                    <MuiThemeProvider
-                        theme={this.pageContext.theme}
-                        sheetsManager={this.pageContext.sheetsManager}>
-                        <Component {...this.props} />
-                    </MuiThemeProvider>
-                </JssProvider>
+                <MuiThemeProvider
+                    theme={this.pageContext.theme}
+                    sheetsManager={this.pageContext.sheetsManager}>
+                    <Component {...this.props} />
+                </MuiThemeProvider>
             );
         }
     }
