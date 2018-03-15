@@ -24,12 +24,17 @@ collections:
           - {label: Site Description, name: siteDescription, widget: text, required: false}
           - {label: Logo, name: logo, widget: image, required: true}
           - {label: Logo Title, name: logoTitle, widget: string, required: true}
-          - label: Social Media Card
+          - label: Social Media
             name: socialMediaCard
             widget: object
             fields:
               - {label: Twitter Site Account, name: twitterSiteAccount, widget: string, required: false}
               - {label: Twitter Creator Account, name: twitterCreatorAccount, widget: string, required: false}
+              - {label: Hash Tag, name: hashTag, widget: string, required: false}
+              - {label: Twitter Url, name: twtrUrl, widget: string, required: false}
+              - {label: Linked Url, name: lnkdnUrl, widget: string, required: false}
+              - {label: Github Url, name: githubUrl, widget: string, required: false}
+              - {label: Facebook Url, name: fbUrl, widget: string, required: false}
               - {label: Header Meta / Scripts, name: headerScripts, widget: text, required: false}
 
   - name: "links"
@@ -53,7 +58,7 @@ collections:
               fields:
                 - {label: "Title", name: title, widget: string}
                 - {label: "URL", name: url, widget: string, default: "/"}
-                - {label: "Open in new window?", name: newwindow, widget: "boolean", default: "false"}
+                - {label: "Open in new window?", name: newwindow, widget: "boolean", default: false}
                 - {label: "Glyph Icon", name: icon, widget: "string"}
         - label: "Footer Links"
           name: "footerlinks"

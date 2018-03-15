@@ -128,6 +128,9 @@ export const TeamsPageTemplate = ({ props, title, content, contentComponent, tea
   const { classes, theme } = props;
   return (
     <section>
+      <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>
+        <PageContent content={content} />
+      </div>
       <Teams teamsData={props} />
       <SEO postPath={teamData.frontmatter.path} postNode={teamData} postSEO />
     </section>

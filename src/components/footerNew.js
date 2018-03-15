@@ -58,58 +58,66 @@ const styles = theme => ({
         flex: 1,
     },
     margin: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing.unit * 2,
     },
 });
 
-const FooterNew = (props) => {
-    const { classes } = props;
-    return (
-        <div className={classes.root} >
-            <div className={classes.footerLinks}>
-                {/* <Button color="inherit" to="/case-studies" component={GatsbyLink} className={classes.button}>
-                Case Studies
-            </Button> */ }
-                <Button color="inherit" to="/team" component={GatsbyLink} className={classes.button}>
-                    Team
-            </Button>
-                <Button color="inherit" href="https://github.com/finite-loop" target="_new" className={classes.button}>
-                    Open Source
-            </Button>
-                <Button color="inherit" to="/contact" component={GatsbyLink} className={classes.button}>
-                    Get in Touch
-            </Button>
-            </div>
-            <div className={classes.socialIcons}>
-                <TwitterShareButton url="https://finiteloop.io" title="FiniteLoop Systems" via="_finiteloop" hashtags={["FiniteLoopSystems"]}>
-                    <TwitterIcon round size={32} />
-                </TwitterShareButton>
-                <LinkedinShareButton url="https://finiteloop.io" title="FiniteLoop Systems">
-                    <LinkedinShareCount url="https://finiteloop.io">
-                        {shareCount => (
-                            <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
-                                <LinkedinIcon round size={32} />
-                            </Badge>
-                        )}
-                    </LinkedinShareCount>
-                </LinkedinShareButton>
-                <EmailShareButton url="https://finiteloop.io" subject="Enquire about FiniteLoop Systems">
-                    <EmailIcon round size={32} />
-                </EmailShareButton>
-                <FacebookShareButton url="https://finiteloop.io" quote="FiniteLoop Systems" hashtag="#FiniteLoopSystems">
-                    <FacebookShareCount url="https://finiteloop.io">
-                        {shareCount => (
-                            <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
-                                <FacebookIcon round size={32} />
-                            </Badge>
-                        )}
-                    </FacebookShareCount>                </FacebookShareButton>
-                <WhatsappShareButton url="https://finiteloop.io" title="FiniteLoop Systems">
-                    <WhatsappIcon round size={32} />
-                </WhatsappShareButton>
-            </div>
-        </div >
-    )
+class FooterNew extends React.Component {
+    render() {
+        const { classes } = this.props;
+        return (
+            <div className={classes.root} >
+                <div className={classes.footerLinks}>
+                    {this.props.links
+                        .map(({ item: footerLinks }) => (
+                            <div>
+                                {!footerLinks.newwindow &&
+                                    <Button color="inherit" to={footerLinks.url} component={GatsbyLink} className={classes.button}>
+                                        {footerLinks.title}
+                                    </Button>
+                                }
+                                {footerLinks.newwindow &&
+                                    <Button color="inherit" href={footerLinks.url} target="_new" className={classes.button}>
+                                        {footerLinks.title}
+                                    </Button>
+                                }
+                            </div>
+                        ))
+                    }
+                </div>
+                <div className={classes.socialIcons}>
+                    Share
+                    <TwitterShareButton url={this.props.url} title={this.props.title} via="_finiteloop" hashtags={[this.props.hashTag]}>
+                        <TwitterIcon round size={48} />
+                    </TwitterShareButton>
+                    <LinkedinShareButton url={this.props.url} title={this.props.title}>
+                        <LinkedinShareCount url={this.props.url}>
+                            {shareCount => (
+                                <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
+                                    <LinkedinIcon round size={48} />
+                                </Badge>
+                            )}
+                        </LinkedinShareCount>
+                    </LinkedinShareButton>
+                    <EmailShareButton url={this.props.url} subject={"Enquire about " + this.props.title}>
+                        <EmailIcon round size={48} />
+                    </EmailShareButton>
+                    <FacebookShareButton url={this.props.url} quote={this.props.title} hashtag={"#" + this.props.hashTag}>
+                        <FacebookShareCount url={this.props.url}>
+                            {shareCount => (
+                                <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
+                                    <FacebookIcon round size={48} />
+                                </Badge>
+                            )}
+                        </FacebookShareCount>
+                    </FacebookShareButton>
+                    <WhatsappShareButton url={this.props.url} title={this.props.title}>
+                        <WhatsappIcon round size={48} />
+                    </WhatsappShareButton>
+                </div>
+            </div >
+        )
+    }
 }
 
 FooterNew.propTypes = {

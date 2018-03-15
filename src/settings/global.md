@@ -9,6 +9,11 @@ logo: /img/flLogo.png
 logoTitle: Finiteloop
 socialMediaCard:
   twitterCreatorAccount: '@partha360'
-  twitterSiteAccount: '@_finiteloop'
+  twitterSiteAccount: '_finiteloop'
+  hashTag: 'FiniteLoopSystems'
+  twtrUrl: 'https://twitter.com/_finiteloop'
+  lnkdnUrl: 'https://www.linkedin.com/company/finiteloop/'
+  fbUrl:
+  githubUrl: 'https://github.com/finite-loop'
 ---
 

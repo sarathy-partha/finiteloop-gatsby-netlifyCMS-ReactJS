@@ -4,19 +4,20 @@ headerlinks:
   - item:
       title: Our People
       url: /team
+      newwindow: false
   - item:
       title: Get in Touch
       url: /contact
 footerlinks:
   - item:
-      title: Team
+      title: Our People
       url: /team
   - item:
-      title: Contact Us
+      title: Get in Touch
       url: /contact
   - item:
       newwindow: true
       title: Open Source
-      url: 'http://localhost:9000'
+      url: 'https://github.com/finite-loop'
 ---
 

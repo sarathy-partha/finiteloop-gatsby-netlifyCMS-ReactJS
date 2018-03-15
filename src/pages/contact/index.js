@@ -83,8 +83,8 @@ const MapWithAMakredInfoWindow = compose(
     withGoogleMap
 )(props =>
     <GoogleMap
-        defaultZoom={17}
-        defaultCenter={{ lat: 12.933739, lng: 77.620947 }}
+        defaultZoom={16}
+        defaultCenter={{ lat: 12.933739, lng: 75.620947 }}
     >
         <Marker
             position={{ lat: 12.933739, lng: 77.620947 }}

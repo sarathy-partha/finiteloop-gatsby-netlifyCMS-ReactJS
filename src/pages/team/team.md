@@ -14,7 +14,7 @@ team:
       background: slategray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/anandeswara/'
       name: Anand
       quote: >-
         Previously led the Cloud center of excellence for a leading IT services
@@ -29,7 +29,7 @@ team:
       background: gray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/partha-s/'
       name: Partha
       quote: >-
         Previously led Web Technologies & UI Practise for a leading IT services
@@ -45,7 +45,7 @@ team:
       background: gray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/pavithra-iyer-8b7326139/'
       name: Pavithra
       quote: >-
         Returning to one’s root has taken much effort, Dwelling in my hut, I see
@@ -59,7 +59,7 @@ team:
       background: dimgray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/sapnil/'
       name: Sapnil
       quote: >-
         Previously the lead architect for a global automotive giant. Smart
@@ -74,7 +74,7 @@ team:
       background: gray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/sharadbaliyan/'
       name: Sharad
       quote: >-
         Easy-going. Intense. How he manages to be both? Meet him and you’ll find
@@ -87,7 +87,7 @@ team:
       background: darkslategray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/shashikantsoni/'
       name: Shashi
       quote: >-
         Not interested in small challenges. The real principle engineer. Likes
@@ -103,7 +103,7 @@ team:
       background: darkslategray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/subramanyan/'
       name: Subbu
       quote: >-
         Previously, a Senior institution builder at a global non-profit
@@ -118,7 +118,7 @@ team:
       background: dimgray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/agsudarshan/'
       name: Sudarshan
       quote: >-
         An IITian turned Social entrepreneur; forever a music and science buff,
@@ -133,7 +133,7 @@ team:
       background: slategray
       fbsiteurl: test
       githubsiteurl: test
-      lnkdnsiteurl: test
+      lnkdnsiteurl: 'https://www.linkedin.com/in/umesh-nadig-687a67a9/'
       name: Umesh
       quote: >-
         Previously a lead solutions architect for an IT major. Avid
