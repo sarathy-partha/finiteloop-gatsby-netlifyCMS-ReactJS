@@ -31,7 +31,7 @@ export const OfferingTemplate = ({
     return (
         <section name="offering">
             {helmet || ''}
-            <Typography component="h2" className={classes.title1}>
+            <Typography component="h1" className={classes.title1}>
                 {title}
             </Typography>
             <div style={{ padding: '20px', lineHeight: '24px', letterSpacing: '1.29px' }}>

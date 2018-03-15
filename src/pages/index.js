@@ -112,6 +112,8 @@ const styles = theme => ({
     textAlign: 'center',
     color: '#70A999',
     fontSize: '36px',
+    margin: '20px',
+    fontWeight: 600,
   },
   card: {
     display: 'flex',
@@ -192,9 +194,9 @@ class IndexPage extends React.Component {
       <div>
         <div style={{ background: 'linear-gradient(-180deg, #FAFAFA 0%, #F1F1F1 100%)' }}>
           <section className={classes.initial} name="initial">
-            <Typography component="p" className={classes.header1}>
+            <Typography component="h1" className={classes.header1}>
               We are a boutique consulting firm focusing on experience design and highly scalable technical architecture
-                    </Typography>
+            </Typography>
             <p className="line-1 anim-typewriter">
               WE HELP YOU SCALE...
             </p>
@@ -211,7 +213,7 @@ class IndexPage extends React.Component {
         </div>
         <Offerrings offeringsData={this.props} />
         <Teams teamsData={this.props} />
-       {/*<CaseStudies caseStudiesData={this.props} />*/}
+        {/*<CaseStudies caseStudiesData={this.props} />*/}
         <SEO postEdges={this.props} />
       </div >
     )

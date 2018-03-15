@@ -18,6 +18,8 @@ const styles = theme => ({
     textAlign: 'center',
     color: '#70A999',
     fontSize: '36px',
+    margin: '20px',
+    fontWeight: 600,
   },
   card: {
     display: 'flex',

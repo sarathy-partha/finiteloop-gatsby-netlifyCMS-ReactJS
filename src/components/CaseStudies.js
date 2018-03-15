@@ -27,7 +27,7 @@ export const CaseStudiesTemplate = ({ props, casestudy }) => {
     return (
 
         <div key={casestudy.title} >
-            <Grid className="" xs item style={{paddingBottom: '10px' }}>
+            <Grid className="" xs item style={{ paddingBottom: '10px' }}>
                 <Card className={classes.caseStudycard}>
                     <CardMedia
                         className={classes.caseStudymedia}
@@ -58,7 +58,7 @@ const CaseStudies = ({ caseStudiesData }) => {
     const { edges: casestudies } = caseStudiesData.data.Casestudies
     return (
         <div>
-            <h2 className={classes.teamsTitle}>Some of our work</h2>
+            <Typography component="h1" className={classes.teamsTitle}>Some of our work</Typography>
             <div style={{ background: 'white' }}>
                 <Grid container spacing={0} className={classes.teams}>
                     {casestudies
@@ -67,19 +67,19 @@ const CaseStudies = ({ caseStudiesData }) => {
                             <CaseStudiesTemplate key={casestudy.frontmatter.title}
                                 props={caseStudiesData}
                                 casestudy={casestudy}
-                            />
+                            /> 
                         ))
                     }
                 </Grid>
-                <div style={{textAlign: 'center'}}>
-                <Button variant="flat" color="inherit"
+                <div style={{ textAlign: 'center' }}>
+                    <Button variant="flat" color="inherit"
                         to="/case-studies"
                         component={Link}
                         style={{ color: '#70A999' }}
                         className={classes.button}>
                         See All Case Studies
                         <i className="material-icons">keyboard_arrow_right</i>
-                </Button>
+                    </Button>
                 </div>
             </div>
         </div>

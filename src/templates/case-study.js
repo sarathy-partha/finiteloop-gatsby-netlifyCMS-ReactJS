@@ -41,7 +41,7 @@ export const CaseStudyTemplate = ({
     <section style={{ padding: '20px' }}>
       {helmet || ''}
       <div>
-        <Typography component="h2" className={classes.title1}>
+        <Typography component="h1" className={classes.title1}>
           {title}
         </Typography>
         <Typography component="p" className={classes.title1}>

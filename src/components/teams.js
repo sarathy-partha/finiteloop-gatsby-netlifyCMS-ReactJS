@@ -27,7 +27,9 @@ export const TeamsPageTemplate = ({ props, teams }) => {
     const { classes, theme } = props;
     return (
         <div style={{ background: 'linear-gradient(-180deg, #FAFAFA 0%, #F1F1F1 100%)' }}>
-            <h2 className={classes.teamsTitle}>{teams.teamTitle}</h2>
+            <Typography component="h1" className={classes.teamsTitle}>
+                {teams.teamTitle}
+            </Typography>
             <Grid container spacing={0} className={classes.teams}>
                 {teams.team
                     .sort(compare)
