@@ -100,7 +100,7 @@ const MapWithAMakredInfoWindow = compose(
                         </Typography>
                         <Divider style={{ backgroundColor: '#70A999', marginTop: '5px' }} />
                         <Typography component="span" variant="body1">
-                            139, 1st A Cross Road,
+                            139, 1st A Cross Road,<br />
                             Koramangala V Block<br />
                             Bangalore - 560095<br />
                             Phone : +91 98803 10676
@@ -185,10 +185,10 @@ class ContactForm extends React.Component {
 
         return (
             <div style={{ margin: '35px' }}>
-                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="headline" component="p">
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="headline" component="h1">
                     We would like to hear from you. If you are around the corner, we will be more than happy to share a cup of coffee with you.
                 </Typography>
-                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="subheading" component="p">
+                <Typography style={{ lineHeight: 1.5, letterSpacing: 1.25, textAlign: 'center' }} variant="subheading" component="h2">
                     Write to us, share your business needs, give us feedback, and we will get back to you the soonest.
                 </Typography>
                 <div className={classes.container}>
