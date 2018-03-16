@@ -22,8 +22,6 @@ import {
     FacebookShareButton,
     LinkedinShareButton,
     TwitterShareButton,
-    FacebookShareCount,
-    LinkedinShareCount,
     WhatsappShareButton,
     EmailShareButton,
     FacebookIcon,
@@ -91,25 +89,13 @@ class FooterNew extends React.Component {
                         <TwitterIcon round size={48} />
                     </TwitterShareButton>
                     <LinkedinShareButton url={this.props.url} title={this.props.title}>
-                        <LinkedinShareCount url={this.props.url}>
-                            {shareCount => (
-                                <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
-                                    <LinkedinIcon round size={48} />
-                                </Badge>
-                            )}
-                        </LinkedinShareCount>
+                        <LinkedinIcon round size={48} />
                     </LinkedinShareButton>
                     <EmailShareButton url={this.props.url} subject={"Enquire about " + this.props.title}>
                         <EmailIcon round size={48} />
                     </EmailShareButton>
                     <FacebookShareButton url={this.props.url} quote={this.props.title} hashtag={"#" + this.props.hashTag}>
-                        <FacebookShareCount url={this.props.url}>
-                            {shareCount => (
-                                <Badge className={classes.margin} badgeContent={shareCount} color="secondary">
-                                    <FacebookIcon round size={48} />
-                                </Badge>
-                            )}
-                        </FacebookShareCount>
+                        <FacebookIcon round size={48} />
                     </FacebookShareButton>
                     <WhatsappShareButton url={this.props.url} title={this.props.title}>
                         <WhatsappIcon round size={48} />
